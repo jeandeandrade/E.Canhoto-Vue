@@ -1,0 +1,86 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: burlywood;
+  color: black;
+}
+
+.icon * {
+  margin: 0;
+}
+
+.ativo {
+  display: inline-block;
+  background-color: burlywood;
+  cursor: default;
+  padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: brown; */
+  border-radius: 15px;
+}
+
+.navbar a {
+  color: black;
+}
+
+.navbar div:not(.ativo):hover {
+  color: gray;
+}
+
+.info {
+  margin-top: 40px;
+  border-radius: 25px;
+  background-color: brown;
+}
+
+.navbar .icon {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.icon h2 {
+  margin: 0 !important;
+  display: block;
+  width: 100%;
+}
+
+.icon a {
+  text-decoration: none;
+}
+
+.icon:hover:not(.ativo) {
+  background-color: #eee;
+}
+
+.icon strong {
+  display: block;
+  width: 100%;
+}
+
+.container form .form-control,
+.form-select,
+.form-select:focus {
+  background-color: #FDEAAB;
+  border: none !important;
+  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3);
+  padding: 8px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none !important;
+}
+
+.buttons {
+  padding-top: 5px;
+}
+
+#app {
+  padding: 60px;
+}
