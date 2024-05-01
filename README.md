@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # E.Canhoto-Vue
 =======
 # e-canhoto
@@ -30,4 +29,3 @@ npm run dev
 ```sh
 npm run build
 ```
->>>>>>> 28a39fd (Adding all files related to the project)
