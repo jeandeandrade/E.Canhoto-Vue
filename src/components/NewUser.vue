@@ -141,6 +141,10 @@ import { RouterView, RouterLink } from "vue-router";
   padding: 12px;
 }
 
+.navbar .icon i strong {
+  font-weight: 300;
+}
+
 .new-user i {
   /* margin: 3px; */
   margin-left: 5px;
@@ -169,7 +173,7 @@ import { RouterView, RouterLink } from "vue-router";
 .fundo-canhoto {
   background-color: white;
   border-radius: 25px;
-  max-width: 1269px;
+  /* max-width: 1269px; */
 }
 
 .fundo-canhoto h4 {
