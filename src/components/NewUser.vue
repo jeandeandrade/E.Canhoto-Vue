@@ -8,29 +8,24 @@ import { RouterView, RouterLink } from "vue-router";
     <div class="info">
       <div class="row">
         <div class="navbar col-2">
-          <div class="icon new-user ativo col-12">
-            <a>
-              <h2>
-                <i class="bi bi-person-fill-add"
-                  ><strong>Novo Usuário</strong></i
-                >
-              </h2>
-            </a>
-          </div>
-          <div class="icon tabela col-6">
-            <router-link to="./table">
-              <h2>
-                <i class="bi bi-grid-3x2"><strong>Tabela</strong></i>
-              </h2>
-            </router-link>
-          </div>
-          <div class="icon voltar col-12">
-            <router-link to="./dashboard">
-              <h2>
-                <i class="bi bi-box-arrow-in-left"><strong>Voltar</strong></i>
-              </h2>
-            </router-link>
-          </div>
+          <a class="icon new-user ativo col-12">
+            <h2>
+              <i class="bi bi-person-fill-add"></i>
+            </h2>
+            <strong>Novo Usuário</strong>
+          </a>
+          <router-link to="./table" class="icon tabela col-6">
+            <h2>
+              <i class="bi bi-grid-3x2"></i>
+            </h2>
+            <strong>Tabela</strong>
+          </router-link>
+          <router-link to="./dashboard" class="icon voltar col-12">
+            <h2>
+              <i class="bi bi-box-arrow-in-left"></i>
+            </h2>
+            <strong>Voltar</strong>
+          </router-link>
         </div>
         <div class="fundo-canhoto col-10">
           <form class="row g-3" id="form">
@@ -57,12 +52,12 @@ import { RouterView, RouterLink } from "vue-router";
             </div>
 
             <div class="buttons" id="btn">
-              <a href="" class="md-2 btn btn-primary" id="registerBtn"
-                >Enviar</a
-              >
-              <a href="" class="md-2 btn btn-danger" id="cancelRegisterBtn"
-                >Cancelar</a
-              >
+              <router-link to="./table" class="md-2 btn btn-primary" id="registerBtn">
+                Enviar
+              </router-link>
+              <router-link to="./table" class="md-2 btn btn-danger" id="cancelRegisterBtn">
+                Cancelar
+              </router-link>
             </div>
           </form>
         </div>
@@ -103,63 +98,21 @@ import { RouterView, RouterLink } from "vue-router";
   margin: 0;
 }
 
-.container-fluid .btn {
-  color: #fff;
-  font-family: "JetBrains Mono", sans-serif;
-  font-size: 14px;
-  padding: 8px 20px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin-top: 10px;
-  cursor: pointer;
-  margin: 5px;
-}
-
 .row {
   padding-left: 10px;
 }
 
 .navbar {
   font-family: "JetBrains Mono", sans-serif;
+  gap: 10px;
 }
 
 .navbar h2 {
   font-size: 25px;
 }
 
-.navbar .tabela {
-  margin-right: 25%;
-}
-
-.navbar .help {
-  margin-right: 25%;
-}
-
-.navbar .ativo {
-  padding: 12px;
-}
-
 .navbar .icon i strong {
   font-weight: 300;
-}
-
-.new-user i {
-  /* margin: 3px; */
-  margin-left: 5px;
-}
-
-.new-user {
-  margin-top: 30px;
-}
-
-.tabela {
-  margin-left: 26%;
-}
-
-.tabela h2 {
-  margin-left: 33%;
 }
 
 .help {
@@ -173,7 +126,6 @@ import { RouterView, RouterLink } from "vue-router";
 .fundo-canhoto {
   background-color: white;
   border-radius: 25px;
-  /* max-width: 1269px; */
 }
 
 .fundo-canhoto h4 {
@@ -189,7 +141,7 @@ import { RouterView, RouterLink } from "vue-router";
   margin-top: 10px;
 }
 
-.icons > * {
+.icons>* {
   margin: 0;
 }
 </style>

@@ -8,24 +8,20 @@ import { RouterView, RouterLink } from "vue-router";
     <div class="info">
       <div class="row">
         <div class="navbar col-2">
-          <div class="icon new-user col-10">
-            <router-link to="./newuser">
-              <h2><i class="bi bi-person-fill-add"></i></h2>
-              <strong>Novo Usuário</strong>
-            </router-link>
-          </div>
+          <router-link to="./newuser" class="icon new-user col-10">
+            <h2><i class="bi bi-person-fill-add"></i></h2>
+            <strong>Novo Usuário</strong>
+          </router-link>
           <div class="icon tabela ativo col-6">
             <a>
               <h2><i class="bi bi-grid-3x2"></i></h2>
               <strong>Tabela</strong>
             </a>
           </div>
-          <div class="icon voltar col-6">
-            <router-link to="./dashboard">
-              <h2><i class="bi bi-box-arrow-in-left"></i></h2>
-              <strong>Voltar</strong>
-            </router-link>
-          </div>
+          <router-link to="./dashboard" class="icon voltar col-6">
+            <h2><i class="bi bi-box-arrow-in-left"></i></h2>
+            <strong>Voltar</strong>
+          </router-link>
         </div>
         <div class="fundo-canhoto col-10">
           <h4>Gestão de Canhotos</h4>
@@ -59,18 +55,13 @@ import { RouterView, RouterLink } from "vue-router";
               </select>
             </div>
             <form class="d-flex col-3" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Procurar"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
+              <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search" />
+              <button class="btn btn-success" type="submit">
                 <i class="bi bi-search"></i>
               </button>
             </form>
             <p id="addCanhoto">
-              <a href="#">Adicionar Canhotos</a>
+              <router-link to="./newCanhoto">Adicionar Canhotos</router-link>
             </p>
             <table class="table">
               <thead>
@@ -93,7 +84,7 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>Test</td>
                   <td>01/01/0001</td>
                   <td>
-                    <a href="detalhesCanhoto.html"><i class="bi bi-eye"></i></a>
+                    <router-link to="./detail"><i class="bi bi-eye"></i></router-link>
                     <a href="#"><i class="bi bi-pencil"></i></a>
                   </td>
                 </tr>
@@ -105,7 +96,7 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>Test</td>
                   <td>01/01/0001</td>
                   <td>
-                    <a href="detalhesCanhoto.html"><i class="bi bi-eye"></i></a>
+                    <router-link to="./detail"><i class="bi bi-eye"></i></router-link>
                     <a href="#"><i class="bi bi-pencil"></i></a>
                   </td>
                 </tr>
@@ -117,7 +108,7 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>Test</td>
                   <td>01/01/0001</td>
                   <td>
-                    <a href="detalhesCanhoto.html"><i class="bi bi-eye"></i></a>
+                    <router-link to="./detail"><i class="bi bi-eye"></i></router-link>
                     <a href="#"><i class="bi bi-pencil"></i></a>
                   </td>
                 </tr>
@@ -129,7 +120,7 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>Test</td>
                   <td>01/01/0001</td>
                   <td>
-                    <a href="detalhesCanhoto.html"><i class="bi bi-eye"></i></a>
+                    <router-link to="./detail"><i class="bi bi-eye"></i></router-link>
                     <a href="#"><i class="bi bi-pencil"></i></a>
                   </td>
                 </tr>
@@ -141,9 +132,7 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>Test</td>
                   <td>01/01/0001</td>
                   <td>
-                    <a href="detalhesCanhoto.html" class="icon-eye"
-                      ><i class="bi bi-eye"></i
-                    ></a>
+                    <router-link to="./detail"><i class="bi bi-eye"></i></router-link>
                     <a href="#"><i class="bi bi-pencil"></i></a>
                   </td>
                 </tr>
@@ -194,17 +183,9 @@ body {
   background-color: burlywood;
 }
 
-.navbar {
-  background-color: brown;
-  border-radius: 15px;
-}
 
 .navbar a {
   color: black;
-}
-
-.navbar a:hover {
-  color: gray;
 }
 
 .new-user i {

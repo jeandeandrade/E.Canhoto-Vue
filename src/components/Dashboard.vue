@@ -5,33 +5,28 @@ import { RouterView, RouterLink } from "vue-router";
 <template>
   <div class="container center d-flex">
     <RouterView />
-        <div class="navbar info row">
-          <h1>E-Canhotos</h1>
-          <div class="icon sign">
-            <router-link to="./sign">
-              <h2>
-                <i class="bi bi-box-arrow-in-right"><strong>Login</strong></i>
-              </h2>
-            </router-link>
-          </div>
-          <div class="icon new-user">
-            <router-link to="./newuser">
-              <h2>
-                <i class="bi bi-person-fill-add">
-                  <strong>Novo Usuario</strong>
-                </i>
-              </h2>
-            </router-link>
-          </div>
-          <div class="icon tabela">
-            <router-link to="./table">
-              <h2>
-                <i class="bi bi-grid-3x2"><strong>Tabela</strong></i>
-              </h2>
-            </router-link>
-          </div>
-        </div>
-      </div>
+    <div class="navbar info row">
+      <h1>E-Canhotos</h1>
+      <router-link to="./sign" class="icon sign">
+        <h2>
+          <i class="bi bi-box-arrow-in-right"></i>
+        </h2>
+        <strong>Login</strong>
+      </router-link>
+      <router-link to="./newuser" class="icon new-user">
+        <h2>
+          <i class="bi bi-person-fill-add"></i>
+        </h2>
+        <strong>Novo Usuario</strong>
+      </router-link>
+      <router-link to="./table" class="icon tabela">
+        <h2>
+          <i class="bi bi-grid-3x2"></i>
+        </h2>
+        <strong>Tabela</strong>
+      </router-link>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -53,7 +48,7 @@ import { RouterView, RouterLink } from "vue-router";
   font-family: "JetBrains Mono", sans-serif;
 }
 
-.center{
+.center {
   justify-content: center;
   align-items: center;
 }
@@ -66,7 +61,7 @@ import { RouterView, RouterLink } from "vue-router";
 
 .row {
   width: 200px;
-  margin:0;
+  margin: 0;
 }
 
 .navbar {
@@ -87,10 +82,6 @@ import { RouterView, RouterLink } from "vue-router";
   color: #fff;
 }
 
-.navbar a:hover {
-  color: gray;
-}
-
 .navbar .icon {
   margin-bottom: 20px;
 }
@@ -101,7 +92,7 @@ import { RouterView, RouterLink } from "vue-router";
   font-size: 25px;
 }
 
-.icon a {
+.icon {
   text-decoration: none;
   color: black;
 }

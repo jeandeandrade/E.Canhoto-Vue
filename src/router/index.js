@@ -3,7 +3,8 @@ import DashboardView from '../views/DashboardView.vue'
 import SignView from '@/views/SignView.vue'
 import NewUserView from '@/views/NewUserView.vue'
 import TableView from '@/views/TableView.vue'
-import NewCanhoto from '@/components/NewCanhoto.vue'
+import NewCanhotoView from '@/views/NewCanhotoView.vue'
+import DetailView from '@/views/DetailView.vue'
 
 const routes = [
   {
@@ -29,6 +30,16 @@ const routes = [
     path: '/table',
     name: 'Table',
     component: TableView
+  },
+  {
+    path: '/detail',
+    name: 'Details',
+    component: DetailView
+  },
+  {
+    path: '/newCanhoto',
+    name: 'NewCanhoto',
+    component: NewCanhotoView
   }
 ]
 
