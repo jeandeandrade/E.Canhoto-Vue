@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+* {
+  font-family: 'JetBrains Mono', sans-serif;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -7,8 +13,22 @@ body {
   color: black;
 }
 
+
+#app{
+  width: 100%;
+  min-height: 800px;
+}
+
 .icon * {
   margin: 0;
+}
+
+.tab-content{
+  max-width: 1500px;
+}
+
+.tab-content > *{
+  width: fit-content;
 }
 
 .ativo {
@@ -17,23 +37,62 @@ body {
   cursor: default;
 }
 
-.navbar {
-  display: flex;
+:root{
+  --bs-link-color: white;
+  --bs-link-hover-color: red;
+}
+
+.btn{
+  color: black;
+}
+
+.btn-primary {
+  --bs-btn-color: black;
+  --bs-btn-bg: burlywood;
+  --bs-btn-border-color: burlywood;
+  --bs-btn-hover-color: rgb(69, 69, 69);
+  --bs-btn-hover-bg: rgb(240, 210, 170);
+  --bs-btn-hover-border-color: rgb(240, 210, 170);
+  --bs-btn-active-border-color: burlywood;
+  --bs-btn-active-bg: burlywood;
+  --bs-btn-active-color: black;
+}
+
+.nav-pills{
+  --bs-nav-pills-link-active-color: black;
+  --bs-nav-pills-link-active-bg: burlywood;
+}
+
+.nav-link:hover{
+  background-color: white;
+}
+
+.all-content{
+  min-width: 1800px;
+  min-height: 700px;
+}
+
+.flex-grow{
+  flex-grow: 1;
+}
+
+.center{
   justify-content: center;
   align-items: center;
+}
+
+.navbar {
+  display: flex;
+  padding: 20px;
   background-color: brown;
   border-radius: 10px;
   gap: 15px;
+  border-radius: 25px;
+  background-color: brown;
 }
 
 .navbar a {
   color: black;
-}
-
-.info {
-  /* margin-top: 40px; */
-  border-radius: 25px;
-  background-color: brown;
 }
 
 .navbar .icon {
