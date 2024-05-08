@@ -72,6 +72,7 @@ import { RouterView, RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
+<<<<<<< HEAD
 body {
   display: flex;
   justify-content: center;
@@ -113,4 +114,7 @@ body {
 .canhoto {
   margin: 50px;
 }
+=======
+
+>>>>>>> 5c080d2 (adding new files for employees and employee details and making a major adjustment to the css and main.css files to make them easier to read and organize)
 </style>

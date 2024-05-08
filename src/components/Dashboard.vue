@@ -30,6 +30,10 @@ import { RouterView, RouterLink } from "vue-router";
 </template>
 
 <style scoped>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5c080d2 (adding new files for employees and employee details and making a major adjustment to the css and main.css files to make them easier to read and organize)
 .container {
   background-color: #fff;
   border-radius: 30px;
@@ -71,5 +75,8 @@ import { RouterView, RouterLink } from "vue-router";
   margin-top: 5px;
   font-size: 25px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5c080d2 (adding new files for employees and employee details and making a major adjustment to the css and main.css files to make them easier to read and organize)
 </style>

@@ -47,6 +47,19 @@ table td a {
   background-color: brown;
 }
 
+.canhoto {
+  margin: 50px;
+}
+
+.fundo-canhoto {
+  background-color: white;
+  border-radius: 25px;
+}
+
+.fundo-canhoto h4 {
+  margin: 15px;
+}
+
 .navbar .icon {
   width: 100%;
   margin: 0;
@@ -118,7 +131,7 @@ a {
 }
 
 .buttons {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .gap-5 {

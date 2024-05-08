@@ -27,7 +27,11 @@ import { RouterView, RouterLink } from "vue-router";
           <h4>Gestão de Funcionários</h4>
           <div class="row canhoto">
             <label>300 <b>Funcionários Encontrados:</b></label>
+<<<<<<< HEAD
             <p id="addCanhoto">
+=======
+            <p id="addUser">
+>>>>>>> 5c080d2 (adding new files for employees and employee details and making a major adjustment to the css and main.css files to make them easier to read and organize)
               <router-link to="./newuser">Adicionar Funcionários</router-link>
             </p>
             <table class="table">
@@ -125,6 +129,7 @@ import { RouterView, RouterLink } from "vue-router";
 </template>
 
 <style scoped>
+<<<<<<< HEAD
 * {
   font-family: 'JetBrains Mono', sans-serif;
 }
@@ -182,11 +187,14 @@ body {
   background-color: white;
   border-radius: 25px;
 }
+=======
+>>>>>>> 5c080d2 (adding new files for employees and employee details and making a major adjustment to the css and main.css files to make them easier to read and organize)
 
 .fundo-canhoto label {
   margin-top: -20px;
 }
 
+<<<<<<< HEAD
 .fundo-canhoto h4 {
   margin: 15px;
 }
@@ -202,11 +210,15 @@ body {
 }
 
 #addCanhoto a {
+=======
+#addUser a {
+>>>>>>> 5c080d2 (adding new files for employees and employee details and making a major adjustment to the css and main.css files to make them easier to read and organize)
   background-color: #fff;
   border: none;
   color: brown;
   font-size: 20px;
   font-weight: 500;
+<<<<<<< HEAD
   font-family: "JetBrains Mono", sans-serif;
 }
 
@@ -261,3 +273,12 @@ table td a {
   font-size: 15px;
 }
 </style>
+=======
+}
+
+#addUser a:hover {
+  color: red;
+}
+
+</style>
+>>>>>>> 5c080d2 (adding new files for employees and employee details and making a major adjustment to the css and main.css files to make them easier to read and organize)
