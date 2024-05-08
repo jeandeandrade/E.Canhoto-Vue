@@ -30,13 +30,6 @@ import { RouterView, RouterLink } from "vue-router";
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
-
-.body {
-  background-color: burlywood;
-  color: black;
-}
-
 .container {
   background-color: #fff;
   border-radius: 30px;
@@ -45,23 +38,11 @@ import { RouterView, RouterLink } from "vue-router";
   width: 500px;
   max-width: 100%;
   min-height: 480px;
-  font-family: "JetBrains Mono", sans-serif;
 }
 
 .center {
   justify-content: center;
   align-items: center;
-}
-
-.info {
-  width: 200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.row {
-  width: 200px;
-  margin: 0;
 }
 
 .navbar {
@@ -78,7 +59,6 @@ import { RouterView, RouterLink } from "vue-router";
   font-size: 30px;
   font-weight: 600;
   font-style: italic;
-  font-family: "JetBrains Mono", sans-serif;
   color: #fff;
 }
 
@@ -92,8 +72,4 @@ import { RouterView, RouterLink } from "vue-router";
   font-size: 25px;
 }
 
-.icon {
-  text-decoration: none;
-  color: black;
-}
 </style>

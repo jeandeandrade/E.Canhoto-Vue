@@ -113,7 +113,6 @@ margin-bottom: 10px;
   line-height: 20px;
   letter-spacing: 0.3px;
   margin: 20px 0;
-  font-family: 'JetBrains Mono', sans-serif;
 }
 
 .container a{
@@ -180,10 +179,6 @@ margin-bottom: 10px;
   border-radius: 8px;
   width: 100%;
   outline: none;
-}
-
-.container input::placeholder {
-font-family: 'JetBrains Mono', sans-serif;
 }
 
 .form-container{

@@ -66,40 +66,11 @@ import { RouterView, RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    background-color: burlywood;
-    color: black;
-}
-
-.form {
-    margin-top: auto;
-}
-
 .form-label {
     padding-top: .5rem;
-}
-
-.fundo-canhoto {
-    background-color: white;
-    border-radius: 25px;
-}
-
-.fundo-canhoto h4 {
-    margin: 15px;
 }
 
 .canhoto {
     margin: 20px;
 }
-
-.canhoto .col-2,
-.col-3 {
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
-
 </style>

@@ -67,8 +67,6 @@ import { RouterView, RouterLink } from "vue-router";
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
-
 .container-fluid form {
   margin: 2px 2px 2px 2px;
 }
@@ -79,7 +77,6 @@ import { RouterView, RouterLink } from "vue-router";
 
 .container-fluid form .form-label {
   font-size: 16px;
-  font-family: "JetBrains Mono", sans-serif;
   font-weight: 500;
 }
 
@@ -95,53 +92,6 @@ import { RouterView, RouterLink } from "vue-router";
 }
 
 .container-fluid form .form-label {
-  margin: 0;
-}
-
-.row {
-  padding-left: 10px;
-}
-
-.navbar {
-  font-family: "JetBrains Mono", sans-serif;
-  gap: 10px;
-}
-
-.navbar h2 {
-  font-size: 25px;
-}
-
-.navbar .icon i strong {
-  font-weight: 300;
-}
-
-.help {
-  margin-left: 26%;
-}
-
-.help h2 {
-  margin-left: 33%;
-}
-
-.fundo-canhoto {
-  background-color: white;
-  border-radius: 25px;
-}
-
-.fundo-canhoto h4 {
-  margin: 15px;
-}
-
-.canhoto {
-  margin: 50px;
-}
-
-.canhoto {
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-
-.icons>* {
   margin: 0;
 }
 </style>

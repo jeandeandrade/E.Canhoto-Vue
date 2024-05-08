@@ -72,45 +72,4 @@ import { RouterView, RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  background-color: burlywood;
-  color: black;
-}
-
-.info {
-  margin-top: 40px;
-  border-radius: 25px;
-  background-color: brown;
-}
-
-.ativo {
-  background-color: burlywood;
-}
-
-.navbar a {
-  color: black;
-}
-
-.navbar h5 {
-  margin-left: 20%;
-  color: black;
-}
-
-
-.fundo-canhoto {
-  background-color: white;
-  border-radius: 25px;
-}
-
-.fundo-canhoto h4 {
-  margin: 15px;
-}
-
-.canhoto {
-  margin: 50px;
-}
 </style>

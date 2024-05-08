@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
 body {
   display: flex;
   justify-content: center;
@@ -5,6 +7,10 @@ body {
   height: 100vh;
   background-color: burlywood;
   color: black;
+}
+
+* {
+  font-family: 'JetBrains Mono', sans-serif;
 }
 
 .icon * {
@@ -24,6 +30,12 @@ body {
   background-color: brown;
   border-radius: 10px;
   gap: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+table td a {
+  color: black;
 }
 
 .navbar a {
@@ -31,7 +43,6 @@ body {
 }
 
 .info {
-  /* margin-top: 40px; */
   border-radius: 25px;
   background-color: brown;
 }
@@ -50,6 +61,19 @@ body {
   margin: 0 !important;
   display: block;
   width: 100%;
+}
+
+.canhoto {
+  margin: 50px;
+}
+
+.fundo-canhoto {
+  background-color: white;
+  border-radius: 25px;
+}
+
+.fundo-canhoto h4 {
+  margin: 15px;
 }
 
 a {
@@ -82,7 +106,6 @@ a {
 
 .btn {
   color: #fff;
-  font-family: "JetBrains Mono", sans-serif;
   font-size: 14px;
   padding: 8px 20px;
   border: 1px solid transparent;
@@ -104,4 +127,42 @@ a {
 
 #app {
   padding: 60px;
+}
+
+/* paginação */
+
+.pagination {
+  float: right;
+}
+
+.pagination li a {
+  border: none;
+  font-size: 15px;
+  min-width: 30px;
+  min-height: 30px;
+  color: #999;
+  margin: 0 2px;
+  line-height: 30px;
+  border-radius: 2px !important;
+  text-align: center;
+  padding: 0 6px;
+}
+
+.pagination li a:hover {
+  color: #666;
+}
+
+.pagination li.active a,
+.pagination li.active a.page-link {
+  background-color: rgb(248, 2, 2);
+}
+
+.pagination li.active a:hover {
+  background-color: rgb(228, 2, 2);
+}
+
+.hint-text {
+  float: left;
+  margin-top: 10px;
+  font-size: 15px;
 }

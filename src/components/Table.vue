@@ -164,71 +164,6 @@ import { RouterView, RouterLink } from "vue-router";
 </template>
 
 <style scoped>
-* {
-  font-family: 'JetBrains Mono', sans-serif;
-}
-
-body {
-  background-color: burlywood;
-  color: black;
-}
-
-.info {
-  margin-top: 40px;
-  border-radius: 25px;
-  background-color: brown;
-}
-
-.ativo {
-  background-color: burlywood;
-}
-
-
-.navbar a {
-  color: black;
-}
-
-.new-user i {
-  margin: 3px;
-}
-
-.new-user {
-  margin-top: 30px;
-}
-
-.navbar h5 {
-  margin-left: 20%;
-  color: black;
-}
-
-.tabela {
-  margin-left: -0%;
-}
-
-.tabela h2 {
-  margin-left: 33%;
-}
-
-.help {
-  margin-left: -0%;
-}
-
-.help h2 {
-  margin-left: 33%;
-}
-
-.fundo-canhoto {
-  background-color: white;
-  border-radius: 25px;
-}
-
-.fundo-canhoto h4 {
-  margin: 15px;
-}
-
-.canhoto {
-  margin: 50px;
-}
 
 .canhoto .col-2,
 .col-3 {
@@ -242,7 +177,6 @@ body {
   color: brown;
   font-size: 20px;
   font-weight: 500;
-  font-family: "JetBrains Mono", sans-serif;
 }
 
 #addCanhoto a:hover {
@@ -252,47 +186,5 @@ body {
 .container form .test .form-select {
   border: none !important;
   outline: none !important;
-}
-
-table td a {
-  color: black;
-}
-
-/* paginação */
-
-.pagination {
-  float: right;
-}
-
-.pagination li a {
-  border: none;
-  font-size: 15px;
-  min-width: 30px;
-  min-height: 30px;
-  color: #999;
-  margin: 0 2px;
-  line-height: 30px;
-  border-radius: 2px !important;
-  text-align: center;
-  padding: 0 6px;
-}
-
-.pagination li a:hover {
-  color: #666;
-}
-
-.pagination li.active a,
-.pagination li.active a.page-link {
-  background-color: rgb(248, 2, 2);
-}
-
-.pagination li.active a:hover {
-  background-color: rgb(228, 2, 2);
-}
-
-.hint-text {
-  float: left;
-  margin-top: 10px;
-  font-size: 15px;
 }
 </style>
