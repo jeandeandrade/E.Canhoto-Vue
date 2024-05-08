@@ -13,17 +13,17 @@ import { RouterView, RouterLink } from "vue-router";
         </h2>
         <strong>Login</strong>
       </router-link>
-      <router-link to="./newuser" class="icon new-user">
+      <router-link to="./user" class="icon new-user">
         <h2>
           <i class="bi bi-person-fill-add"></i>
         </h2>
-        <strong>Novo Usuario</strong>
+        <strong>Usuários</strong>
       </router-link>
       <router-link to="./table" class="icon tabela">
         <h2>
           <i class="bi bi-grid-3x2"></i>
         </h2>
-        <strong>Tabela</strong>
+        <strong>Canhotos</strong>
       </router-link>
     </div>
   </div>
