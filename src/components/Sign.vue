@@ -247,7 +247,6 @@ margin-bottom: 10px;
 .toggle{
   background-color: #512da8;
   height: 100%;
-  /* background: linear-gradient(to right, #5c6bc0, #512da8); */
   background: brown;
   color: #fff;
   position: relative;

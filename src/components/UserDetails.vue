@@ -72,7 +72,6 @@ import { RouterView, RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
-<<<<<<< HEAD
 body {
   display: flex;
   justify-content: center;
@@ -82,29 +81,9 @@ body {
   color: black;
 }
 
-.info {
-  margin-top: 40px;
-  border-radius: 25px;
-  background-color: brown;
-}
-
-.ativo {
-  background-color: burlywood;
-}
-
-.navbar a {
-  color: black;
-}
-
 .navbar h5 {
   margin-left: 20%;
   color: black;
-}
-
-
-.fundo-canhoto {
-  background-color: white;
-  border-radius: 25px;
 }
 
 .fundo-canhoto h4 {
@@ -114,7 +93,4 @@ body {
 .canhoto {
   margin: 50px;
 }
-=======
-
->>>>>>> 5c080d2 (adding new files for employees and employee details and making a major adjustment to the css and main.css files to make them easier to read and organize)
 </style>

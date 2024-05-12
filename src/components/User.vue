@@ -27,11 +27,9 @@ import { RouterView, RouterLink } from "vue-router";
           <h4>Gestão de Funcionários</h4>
           <div class="row canhoto">
             <label>300 <b>Funcionários Encontrados:</b></label>
-<<<<<<< HEAD
-            <p id="addCanhoto">
-=======
+            <p id="addCanhoto"></p>
+
             <p id="addUser">
->>>>>>> 5c080d2 (adding new files for employees and employee details and making a major adjustment to the css and main.css files to make them easier to read and organize)
               <router-link to="./newuser">Adicionar Funcionários</router-link>
             </p>
             <table class="table">
@@ -53,7 +51,9 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>WhinderssonNunes@gmail.com</td>
                   <td>Entregador</td>
                   <td>
-                    <router-link to="./userDetails"><i class="bi bi-eye"></i></router-link>
+                    <router-link to="./userDetails"
+                      ><i class="bi bi-eye"></i
+                    ></router-link>
                     <a href="#"><i class="bi bi-trash"></i></a>
                   </td>
                 </tr>
@@ -64,7 +64,9 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>BamBam@gmail.com</td>
                   <td>Entregador</td>
                   <td>
-                    <router-link to="./userDetails"><i class="bi bi-eye"></i></router-link>
+                    <router-link to="./userDetails"
+                      ><i class="bi bi-eye"></i
+                    ></router-link>
                     <a href="#"><i class="bi bi-trash"></i></a>
                   </td>
                 </tr>
@@ -75,7 +77,9 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>GracyDoBelo@gmail.com</td>
                   <td>Entregador(a)</td>
                   <td>
-                    <router-link to="./userDetails"><i class="bi bi-eye"></i></router-link>
+                    <router-link to="./userDetails"
+                      ><i class="bi bi-eye"></i
+                    ></router-link>
                     <a href="#"><i class="bi bi-trash"></i></a>
                   </td>
                 </tr>
@@ -86,7 +90,9 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>EstevaoWillian@gmail.com</td>
                   <td>Entregador</td>
                   <td>
-                    <router-link to="./userDetails"><i class="bi bi-eye"></i></router-link>
+                    <router-link to="./userDetails"
+                      ><i class="bi bi-eye"></i
+                    ></router-link>
                     <a href="#"><i class="bi bi-trash"></i></a>
                   </td>
                 </tr>
@@ -97,7 +103,9 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>PeterDoEinerd@gmail.com</td>
                   <td>Entregador</td>
                   <td>
-                    <router-link to="./userDetails"><i class="bi bi-eye"></i></router-link>
+                    <router-link to="./userDetails"
+                      ><i class="bi bi-eye"></i
+                    ></router-link>
                     <a href=""><i class="bi bi-trash"></i></a>
                   </td>
                 </tr>
@@ -129,30 +137,9 @@ import { RouterView, RouterLink } from "vue-router";
 </template>
 
 <style scoped>
-<<<<<<< HEAD
-* {
-  font-family: 'JetBrains Mono', sans-serif;
-}
-
-body {
-  background-color: burlywood;
-  color: black;
-}
-
-.info {
-  margin-top: 40px;
-  border-radius: 25px;
-  background-color: brown;
-}
-
-.ativo {
-  background-color: burlywood;
-}
 
 
-.navbar a {
-  color: black;
-}
+
 
 .new-user i {
   margin: 3px;
@@ -167,34 +154,15 @@ body {
   color: black;
 }
 
-.tabela {
-  margin-left: -0%;
-}
-
-.tabela h2 {
-  margin-left: 33%;
-}
-
-.help {
-  margin-left: -0%;
-}
-
-.help h2 {
-  margin-left: 33%;
-}
-
 .fundo-canhoto {
   background-color: white;
   border-radius: 25px;
 }
-=======
->>>>>>> 5c080d2 (adding new files for employees and employee details and making a major adjustment to the css and main.css files to make them easier to read and organize)
 
 .fundo-canhoto label {
   margin-top: -20px;
 }
 
-<<<<<<< HEAD
 .fundo-canhoto h4 {
   margin: 15px;
 }
@@ -209,16 +177,12 @@ body {
   margin-top: 10px;
 }
 
-#addCanhoto a {
-=======
 #addUser a {
->>>>>>> 5c080d2 (adding new files for employees and employee details and making a major adjustment to the css and main.css files to make them easier to read and organize)
   background-color: #fff;
   border: none;
   color: brown;
   font-size: 20px;
   font-weight: 500;
-<<<<<<< HEAD
   font-family: "JetBrains Mono", sans-serif;
 }
 
@@ -231,54 +195,7 @@ body {
   outline: none !important;
 }
 
-table td a {
-  color: black;
-}
-
-/* paginação */
-
-.pagination {
-  float: right;
-}
-
-.pagination li a {
-  border: none;
-  font-size: 15px;
-  min-width: 30px;
-  min-height: 30px;
-  color: #999;
-  margin: 0 2px;
-  line-height: 30px;
-  border-radius: 2px !important;
-  text-align: center;
-  padding: 0 6px;
-}
-
-.pagination li a:hover {
-  color: #666;
-}
-
-.pagination li.active a,
-.pagination li.active a.page-link {
-  background-color: rgb(248, 2, 2);
-}
-
-.pagination li.active a:hover {
-  background-color: rgb(228, 2, 2);
-}
-
-.hint-text {
-  float: left;
-  margin-top: 10px; 
-  font-size: 15px;
-}
-</style>
-=======
-}
-
 #addUser a:hover {
   color: red;
 }
-
 </style>
->>>>>>> 5c080d2 (adding new files for employees and employee details and making a major adjustment to the css and main.css files to make them easier to read and organize)
