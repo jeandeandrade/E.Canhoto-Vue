@@ -113,7 +113,6 @@ margin-bottom: 10px;
   line-height: 20px;
   letter-spacing: 0.3px;
   margin: 20px 0;
-  font-family: 'JetBrains Mono', sans-serif;
 }
 
 .container a{
@@ -182,10 +181,6 @@ margin-bottom: 10px;
   outline: none;
 }
 
-.container input::placeholder {
-font-family: 'JetBrains Mono', sans-serif;
-}
-
 .form-container{
   position: absolute;
   top: 0;
@@ -252,7 +247,6 @@ font-family: 'JetBrains Mono', sans-serif;
 .toggle{
   background-color: #512da8;
   height: 100%;
-  /* background: linear-gradient(to right, #5c6bc0, #512da8); */
   background: brown;
   color: #fff;
   position: relative;

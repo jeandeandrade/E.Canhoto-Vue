@@ -22,45 +22,45 @@ import { RouterView, RouterLink } from 'vue-router';
           </router-link>
         </div>
         <div class="fundo-canhoto col-10">
-          <h4>Gestão de Canhotos</h4>
+          <h4>Gestão de Funcionários</h4>
           <form class="canhoto">
             <fieldset class="d-flex flex-column gap-2">
-              <legend>Detalhes de Canhoto</legend>
+              <legend>Detalhes do Funcionário</legend>
               <div class="row">
                 <div class="col sm-3">
                   <label for="disabledTextInput" class="form-label">ID</label>
                   <input type="text" id="disabledTextInput" disabled class="form-control" value="1">
                 </div>
                 <div class="col sm-3">
-                  <label for="disabledTextInput" class="form-label">Número NF:</label>
-                  <input type="text" id="disabledTextInput" disabled class="form-control" value="000000000000">
+                  <label for="disabledTextInput" class="form-label">Nome:</label>
+                  <input type="text" id="disabledTextInput" disabled class="form-control" value="Jorginho">
                 </div>
                 <div class="col sm-3">
-                  <label for="disabledTextInput" class="form-label">Entregador:</label>
-                  <input type="text" id="disabledTextInput" disabled class="form-control" value="Jorginho da esquina">
+                  <label for="disabledTextInput" class="form-label">Sobrenome:</label>
+                  <input type="text" id="disabledTextInput" disabled class="form-control" value="Da esquina">
                 </div>
               </div>
               <div class="row">
                 <div class="col sm-3">
-                  <label for="disabledTextInput" class="form-label">Preço:</label>
-                  <input type="text" id="disabledTextInput" disabled class="form-control" value="9.999,00">
+                  <label for="disabledTextInput" class="form-label">E-mail:</label>
+                  <input type="text" id="disabledTextInput" disabled class="form-control" value="JorginhoDaEsquina@gmail.com">
                 </div>
                 <div class="col sm-3">
-                  <label for="disabledTextInput" class="form-label">Categorias:</label>
-                  <input type="text" id="disabledTextInput" disabled class="form-control" value="Alimentação">
+                  <label for="disabledTextInput" class="form-label">Função:</label>
+                  <input type="text" id="disabledTextInput" disabled class="form-control" value="Entregador">
                 </div>
                 <div class="col sm-3">
-                  <label for="disabledTextInput" class="form-label">Data:</label>
-                  <input type="text" id="disabledTextInput" disabled class="form-control" value="01/01/2024">
+                  <label for="disabledTextInput" class="form-label">Data da Alteração:</label>
+                  <input type="text" id="disabledTextInput" disabled class="form-control" value="07/05/2024">
                 </div>
               </div>
               <div class="buttons d-flex flex-row justify-content-between">
                 <div class="d-flex flex-row sm-2">
-                  <router-link to="./table" class="btn btn-secondary">Voltar</router-link>
+                  <router-link to="./user" class="btn btn-secondary">Voltar</router-link>
                 </div>
                 <div class="d-flex flex-row sm-2">
-                  <router-link to="./table" class="btn btn-primary me-2">Aprovar</router-link>
-                  <router-link to="./table" class="btn btn-danger">Reprovar</router-link>
+                  <router-link to="./user" class="btn btn-primary me-2">Aprovar</router-link>
+                  <router-link to="./user" class="btn btn-danger">Reprovar</router-link>
                 </div>
               </div>
             </fieldset>
@@ -72,4 +72,25 @@ import { RouterView, RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: burlywood;
+  color: black;
+}
+
+.navbar h5 {
+  margin-left: 20%;
+  color: black;
+}
+
+.fundo-canhoto h4 {
+  margin: 15px;
+}
+
+.canhoto {
+  margin: 50px;
+}
 </style>

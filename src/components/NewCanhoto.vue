@@ -1,5 +1,5 @@
 <script setup>
-import { RouterView, RouterLink } from 'vue-router';
+import { RouterView, RouterLink } from "vue-router";
 </script>
 
 <template>
@@ -66,7 +66,7 @@ import { RouterView, RouterLink } from 'vue-router';
 }
 
 .canhoto {
-    margin: 20px;
+  margin: 20px;
 }
 
 .canhoto .col-2,
