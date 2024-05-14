@@ -13,6 +13,9 @@ body {
   color: black;
 }
 
+.modal-dialog{
+  width: max-content;
+}
 
 #app{
   width: 100%;
@@ -40,6 +43,22 @@ body {
 :root{
   --bs-link-color: white;
   --bs-link-hover-color: red;
+}
+
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-control:focus {
+  background-color: #FDEAAB !important;
+  border: none !important;
+  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3) !important;
+  padding: 8px !important;
+  border-radius: 8px !important;
+  width: 100% !important;
+  outline: none !important;
 }
 
 .btn{
@@ -127,7 +146,7 @@ a {
   cursor: pointer;
 }
 
-.container form .form-control,
+form .form-control,
 .form-select,
 .form-select:focus {
   background-color: #FDEAAB;

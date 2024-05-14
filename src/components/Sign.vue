@@ -1,6 +1,6 @@
 <template>
   <RouterView/>
-  <div id="app">
+  <div>
     <div class="container" id="container">
       <div class="form-container sign-up">
         <form>
