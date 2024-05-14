@@ -42,7 +42,7 @@ body {
 
 :root{
   --bs-link-color: white;
-  --bs-link-hover-color: red;
+  --bs-link-hover-color: brown;
 }
 
 main{

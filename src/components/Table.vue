@@ -157,7 +157,7 @@ import NewCanhoto from "./NewCanhoto.vue";
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Salvar Canhoto</button>
+            <button type="button" class="btn btn-primary" @click="submitNewCanhoto(this)">Salvar Canhoto</button>
           </div>
         </div>
       </div>
@@ -194,19 +194,6 @@ import NewCanhoto from "./NewCanhoto.vue";
   margin-top: 10px;
 }
 
-#addCanhoto a {
-  background-color: #fff;
-  border: none;
-  color: brown;
-  font-size: 20px;
-  font-weight: 500;
-  font-family: "JetBrains Mono", sans-serif;
-}
-
-#addCanhoto a:hover {
-  color: red;
-}
-
 .container form .test .form-select {
   border: none !important;
   outline: none !important;
@@ -215,8 +202,6 @@ import NewCanhoto from "./NewCanhoto.vue";
 table td a {
   color: black;
 }
-
-/* paginação */
 
 .pagination {
   float: right;
@@ -227,7 +212,7 @@ table td a {
   font-size: 15px;
   min-width: 30px;
   min-height: 30px;
-  color: #999;
+  color: #ccbdbd;
   margin: 0 2px;
   line-height: 30px;
   border-radius: 2px !important;
@@ -236,12 +221,13 @@ table td a {
 }
 
 .pagination li a:hover {
-  color: #666;
+  color: #ffffff;
+  background-color: #b6a9a9;
 }
 
 .pagination li.active a,
 .pagination li.active a.page-link {
-  background-color: rgb(248, 2, 2);
+  background-color: rgb(172, 63, 63);
 }
 
 .pagination li.active a:hover {

@@ -4,7 +4,7 @@ import { RouterView, RouterLink } from 'vue-router';
 
 <template>
     <div class="container fundo-canhoto col-10 canhoto">
-        <form class="form row">
+        <form class="form row" id="newCanhotoForm">
             <div class="col-6">
                 <label for="inputNome" class="form-label">Nome do Entregador</label>
                 <input type="text" class="form-control" id="inputNome" placeholder="Ex: Julio César">
