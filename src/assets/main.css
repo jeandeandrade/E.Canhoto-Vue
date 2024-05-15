@@ -13,11 +13,11 @@ body {
   color: black;
 }
 
-.modal-dialog{
+.modal-dialog {
   width: max-content;
 }
 
-#app{
+#app {
   width: 100%;
   min-height: 800px;
 }
@@ -26,11 +26,11 @@ body {
   margin: 0;
 }
 
-.tab-content{
+.tab-content {
   max-width: 1500px;
 }
 
-.tab-content > *{
+.tab-content>* {
   width: fit-content;
 }
 
@@ -40,12 +40,12 @@ body {
   cursor: default;
 }
 
-:root{
+:root {
   --bs-link-color: white;
   --bs-link-hover-color: brown;
 }
 
-main{
+main {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,7 +61,7 @@ main{
   outline: none !important;
 }
 
-.btn{
+.btn {
   color: black;
 }
 
@@ -77,25 +77,25 @@ main{
   --bs-btn-active-color: black;
 }
 
-.nav-pills{
+.nav-pills {
   --bs-nav-pills-link-active-color: black;
   --bs-nav-pills-link-active-bg: burlywood;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   background-color: white;
 }
 
-.all-content{
+.all-content {
   min-width: 1800px;
   min-height: 700px;
 }
 
-.flex-grow{
+.flex-grow {
   flex-grow: 1;
 }
 
-.center{
+.center {
   justify-content: center;
   align-items: center;
 }
@@ -157,24 +157,27 @@ a {
   background-color: #eee;
 }
 
-.icon:hover:not(.ativo){
+.icon:hover:not(.ativo) {
   color: gray;
 }
 
-.icon:not(.ativo){
+.icon:not(.ativo) {
   cursor: pointer;
 }
 
 form .form-control,
-.form-select,
-.form-select:focus {
-  background-color: #FDEAAB;
+.form-select {
+  background-color: #efc331;
   border: none !important;
   box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3);
   padding: 8px;
   border-radius: 8px;
   width: 100%;
   outline: none !important;
+}
+
+.form-control:focus {
+  background-color: #ffd446 !important;
 }
 
 .btn {
@@ -227,11 +230,22 @@ form .form-control,
 
 .pagination li.active a,
 .pagination li.active a.page-link {
-  background-color: rgb(248, 2, 2);
+  color: white;
+  background-color: rgb(217, 5, 5);
 }
 
-.pagination li.active a:hover {
-  background-color: rgb(228, 2, 2);
+.pagination a:hover {
+  color: white !important;
+  background-color: rgb(255, 0, 0) !important;
+}
+
+.modal-dialog {
+  max-width: fit-content;
+}
+
+.container-fluid form .form-label {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .hint-text {

@@ -184,9 +184,7 @@ import NewCanhoto from "./NewCanhoto.vue";
   margin: 50px;
 }
 
-.modal-dialog {
-  max-width: fit-content;
-}
+
 
 .canhoto .col-2,
 .col-3 {
@@ -223,15 +221,6 @@ table td a {
 .pagination li a:hover {
   color: #ffffff;
   background-color: #b6a9a9;
-}
-
-.pagination li.active a,
-.pagination li.active a.page-link {
-  background-color: rgb(172, 63, 63);
-}
-
-.pagination li.active a:hover {
-  background-color: rgb(228, 2, 2);
 }
 
 .hint-text {

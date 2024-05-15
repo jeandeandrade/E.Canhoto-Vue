@@ -37,16 +37,6 @@ import { RouterView, RouterLink } from "vue-router";
     margin-top: auto;
 }
 
-.form-control:focus {
-  background-color: #FDEAAB !important;
-  border: none !important;
-  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3) !important;
-  padding: 8px !important;
-  border-radius: 8px !important;
-  width: 100% !important;
-  outline: none !important;
-}
-
 
 .form-label {
     padding-top: .5rem;

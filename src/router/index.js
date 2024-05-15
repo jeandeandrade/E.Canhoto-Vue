@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DashboardView from '../views/DashboardView.vue'
 import SignView from '@/views/SignView.vue'
-import UserView from '@/views/UserView.vue'
-import TableView from '@/views/TableView.vue'
 import NewCanhotoView from '@/views/NewCanhotoView.vue'
 import DetailView from '@/views/DetailView.vue'
 import NewUserView from '@/views/NewUserView.vue'
@@ -22,16 +20,6 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: DashboardView
-  },
-  {
-    path: '/user',
-    name: 'User',
-    component: UserView
-  },
-  {
-    path: '/table',
-    name: 'Table',
-    component: TableView
   },
   {
     path: '/detail',
