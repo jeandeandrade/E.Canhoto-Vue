@@ -104,8 +104,7 @@ import NewUser from "./NewUser.vue";
       </div>
     </div>
 
-    <div class="modal fade" id="newUserModal" tabindex="-1" aria-labelledby="newUserModalLabel"
-      aria-hidden="true">
+    <div class="modal fade" id="newUserModal" tabindex="-1" aria-labelledby="newUserModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
