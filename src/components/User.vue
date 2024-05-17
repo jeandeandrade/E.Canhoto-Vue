@@ -9,12 +9,12 @@ import { RouterView, RouterLink } from "vue-router";
       <div class="row">
         <div class="navbar col-2">
           <a class="icon new-user ativo col-10">
-            <h2><i class="bi bi-person-fill-add"></i></h2>
+            <h2><i class="bi bi-person-lines-fill"></i></h2>
             <strong>Usuários</strong>
           </a>
           <div class="icon tabela col-6">
             <router-link to="./table">
-              <h2><i class="bi bi-grid-3x2"></i></h2>
+              <h2><i class="bi bi-receipt-cutoff"></i></h2>
               <strong>Canhotos</strong>
             </router-link>
           </div>
@@ -51,10 +51,306 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>WhinderssonNunes@gmail.com</td>
                   <td>Entregador</td>
                   <td>
-                    <router-link to="./userDetails"
-                      ><i class="bi bi-eye"></i
-                    ></router-link>
-                    <a href="#"><i class="bi bi-trash"></i></a>
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalView"
+                    >
+                      <i class="bi bi-eye"></i>
+                    </button>
+
+                    <transition name="custom-fade">
+                      <div
+                        class="modal fade"
+                        id="exampleModalView"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalViewLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title fs-5"
+                                id="exampleModalViewLabel"
+                              >
+                                Visualizar Funcionário
+                              </h1>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label for="inputNome" class="form-label"
+                                    >Nome</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputNome"
+                                    placeholder="Ex: Whindersson"
+                                    disabled
+                                  />
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="inputSobrenome" class="form-label"
+                                    >Sobrenome</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputSobrenome"
+                                    placeholder="Ex: Nunes"
+                                    disabled
+                                  />
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label for="inputEmail" class="form-label"
+                                    >Email</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputEmail"
+                                    placeholder="Ex: test@gmail.com"
+                                    disabled
+                                  />
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="inputFuncao" class="form-label"
+                                    >Função</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputFuncao"
+                                    placeholder="Ex: Entregador"
+                                    disabled
+                                  />
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-primary"
+                                data-bs-dismiss="modal"
+                              >
+                                Fechar
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </transition>
+
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalEdit"
+                    >
+                      <i class="bi bi-pencil"></i>
+                    </button>
+
+                    <transition name="custom-fade">
+                      <div
+                        class="modal fade"
+                        id="exampleModalEdit"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalEditLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title fs-5"
+                                id="exampleModalEditLabel"
+                              >
+                                Editar Funcionário
+                              </h1>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label for="inputNome" class="form-label"
+                                    >Nome</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputNome"
+                                    placeholder="Ex: Whindersson"
+                                  />
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="inputSobrenome" class="form-label"
+                                    >Sobrenome</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputSobrenome"
+                                    placeholder="Ex: Nunes"
+                                  />
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label for="inputEmail" class="form-label"
+                                    >Email</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputEmail"
+                                    placeholder="Ex: test@gmail.com"
+                                  />
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="inputFuncao" class="form-label"
+                                    >Função</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputFuncao"
+                                    placeholder="Ex: Entregador"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Cancelar
+                              </button>
+                              <button type="button" class="btn btn-success">
+                                Salvar
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </transition>
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalDelete"
+                    >
+                      <i class="bi bi-trash"></i>
+                    </button>
+
+                    <transition name="custom-fade">
+                      <div
+                        class="modal fade"
+                        id="exampleModalDelete"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title fs-5"
+                                id="exampleModalLabel"
+                              >
+                                Excluir Funcionário
+                              </h1>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label for="inputNome" class="form-label"
+                                    >Nome</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputNome"
+                                    placeholder="Ex: Whindersson"
+                                  />
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="inputSobrenome" class="form-label"
+                                    >Sobrenome</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputSobrenome"
+                                    placeholder="Ex: Nunes"
+                                  />
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label for="inputEmail" class="form-label"
+                                    >Email</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputEmail"
+                                    placeholder="Ex: test@gmail.com"
+                                  />
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="inputFuncao" class="form-label"
+                                    >Função</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputFuncao"
+                                    placeholder="Ex: Entregador"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Cancelar
+                              </button>
+                              <button type="button" class="btn btn-success">
+                                Salvar
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </transition>
                   </td>
                 </tr>
                 <tr>
@@ -64,10 +360,30 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>BamBam@gmail.com</td>
                   <td>Entregador</td>
                   <td>
-                    <router-link to="./userDetails"
-                      ><i class="bi bi-eye"></i
-                    ></router-link>
-                    <a href="#"><i class="bi bi-trash"></i></a>
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalView"
+                    >
+                      <i class="bi bi-eye"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalEdit"
+                    >
+                      <i class="bi bi-pencil"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalDelete"
+                    >
+                      <i class="bi bi-trash"></i>
+                    </button>
                   </td>
                 </tr>
                 <tr>
@@ -75,12 +391,32 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>Graciany</td>
                   <td>Barbosa</td>
                   <td>GracyDoBelo@gmail.com</td>
-                  <td>Entregador(a)</td>
+                  <td>Entregador</td>
                   <td>
-                    <router-link to="./userDetails"
-                      ><i class="bi bi-eye"></i
-                    ></router-link>
-                    <a href="#"><i class="bi bi-trash"></i></a>
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalView"
+                    >
+                      <i class="bi bi-eye"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalEdit"
+                    >
+                      <i class="bi bi-pencil"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalDelete"
+                    >
+                      <i class="bi bi-trash"></i>
+                    </button>
                   </td>
                 </tr>
                 <tr>
@@ -90,10 +426,30 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>EstevaoWillian@gmail.com</td>
                   <td>Entregador</td>
                   <td>
-                    <router-link to="./userDetails"
-                      ><i class="bi bi-eye"></i
-                    ></router-link>
-                    <a href="#"><i class="bi bi-trash"></i></a>
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalView"
+                    >
+                      <i class="bi bi-eye"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalEdit"
+                    >
+                      <i class="bi bi-pencil"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalDelete"
+                    >
+                      <i class="bi bi-trash"></i>
+                    </button>
                   </td>
                 </tr>
                 <tr>
@@ -103,10 +459,30 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>PeterDoEinerd@gmail.com</td>
                   <td>Entregador</td>
                   <td>
-                    <router-link to="./userDetails"
-                      ><i class="bi bi-eye"></i
-                    ></router-link>
-                    <a href=""><i class="bi bi-trash"></i></a>
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalView"
+                    >
+                      <i class="bi bi-eye"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalEdit"
+                    >
+                      <i class="bi bi-pencil"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger border-0 shadow-none"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalDelete"
+                    >
+                      <i class="bi bi-trash"></i>
+                    </button>
                   </td>
                 </tr>
               </tbody>
@@ -137,10 +513,6 @@ import { RouterView, RouterLink } from "vue-router";
 </template>
 
 <style scoped>
-
-
-
-
 .new-user i {
   margin: 3px;
 }
@@ -149,26 +521,17 @@ import { RouterView, RouterLink } from "vue-router";
   margin-top: 30px;
 }
 
+.navbar {
+  padding-bottom: 50px;
+}
+
 .navbar h5 {
   margin-left: 20%;
   color: black;
 }
 
-.fundo-canhoto {
-  background-color: white;
-  border-radius: 25px;
-}
-
 .fundo-canhoto label {
   margin-top: -20px;
-}
-
-.fundo-canhoto h4 {
-  margin: 15px;
-}
-
-.canhoto {
-  margin: 50px;
 }
 
 .canhoto .col-2,
@@ -197,5 +560,9 @@ import { RouterView, RouterLink } from "vue-router";
 
 #addUser a:hover {
   color: red;
+}
+
+.modal-body {
+  width: 100%;
 }
 </style>

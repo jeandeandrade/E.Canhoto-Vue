@@ -72,7 +72,7 @@ import { RouterView, RouterLink } from "vue-router";
               </router-link>
               <router-link
                 to="./user"
-                class="md-2 btn btn-danger"
+                class="md-2 btn btn-secondary"
                 id="cancelRegisterBtn"
               >
                 Cancelar
@@ -88,15 +88,6 @@ import { RouterView, RouterLink } from "vue-router";
 <style scoped>
 .container-fluid form {
   margin: 2px 2px 2px 2px;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  background-color: burlywood;
-  color: black;
 }
 
 .form {
@@ -123,14 +114,6 @@ body {
   margin: 0;
 }
 
-.form-label {
-  padding-top: 0.5rem;
-}
-
-.fundo-canhoto {
-  background-color: white;
-  border-radius: 25px;
-}
 
 .fundo-canhoto h4 {
   margin: 15px;
@@ -150,7 +133,4 @@ body {
   padding-top: 0.5rem;
 }
 
-.canhoto {
-  margin: 20px;
-}
 </style>

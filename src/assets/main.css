@@ -10,7 +10,7 @@ body {
 }
 
 * {
-  font-family: 'JetBrains Mono', sans-serif;
+  font-family: "JetBrains Mono", sans-serif;
 }
 
 .icon * {
@@ -31,11 +31,36 @@ body {
   border-radius: 10px;
   gap: 15px;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
-table td a {
+.table td a {
   color: black;
+}
+
+.modal-content {
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  height: 100%;
+  color: var(--bs-modal-color);
+  pointer-events: auto;
+  background-color: var(--bs-modal-bg);
+  background-clip: padding-box;
+  border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+  border-radius: var(--bs-modal-border-radius);
+  outline: 0;
+  right: 30%;
+  gap: 5px;
+  margin-top: 25%;
+}
+
+:root {
+  --bs-modal-bg: #fff;
+  --bs-modal-border-color: rgba(0, 0, 0, 0.175);
+  --bs-modal-border-width: 1px;
+  --bs-modal-border-radius: 0.5rem;
 }
 
 .navbar a {
@@ -45,10 +70,6 @@ table td a {
 .info {
   border-radius: 25px;
   background-color: brown;
-}
-
-.canhoto {
-  margin: 50px;
 }
 
 .fundo-canhoto {
@@ -97,18 +118,18 @@ a {
   background-color: #eee;
 }
 
-.icon:hover:not(.ativo){
+.icon:hover:not(.ativo) {
   color: gray;
 }
 
-.icon:not(.ativo){
+.icon:not(.ativo) {
   cursor: pointer;
 }
 
 .container form .form-control,
 .form-select,
 .form-select:focus {
-  background-color: #FDEAAB;
+  background-color: #fdeaab;
   border: none !important;
   box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3);
   padding: 8px;
@@ -178,4 +199,71 @@ a {
   float: left;
   margin-top: 10px;
   font-size: 15px;
+}
+
+.modal-body input {
+  background-color: #fdeaab !important;
+  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3) !important;
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none !important;
+  outline: none !important;
+}
+
+.modal-footer .btn {
+  font-size: 12px;
+  padding: 10px 45px;
+  /* border: 1px solid transparent; */
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btn-danger {
+  padding: 5px 3px 3px 5px;
+  background: transparent;
+  color: black;
+  margin: 0px;
+  margin-left: 3px;
+  text-decoration: none;
+}
+
+.btn-danger:hover {
+  background-color: #999 !important;
+}
+
+.modal-body label {
+  font-size: 16px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@keyframes custom-fade-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes custom-fade-leave {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.custom-fade-enter-active {
+  animation: custom-fade-enter 0.1s ease-in-out;
+}
+
+.custom-fade-leave-active {
+  animation: custom-fade-leave 0.5s ease-in-out;
 }

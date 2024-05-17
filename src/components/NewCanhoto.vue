@@ -80,7 +80,7 @@ import { RouterView, RouterLink } from "vue-router";
               </router-link>
               <router-link
                 to="./table"
-                class="md-2 btn btn-danger"
+                class="md-2 btn btn-warning"
                 id="cancelRegisterBtn"
               >
                 Cancelar
