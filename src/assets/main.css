@@ -38,6 +38,14 @@ body {
   color: black;
 }
 
+.table thead {
+  text-align: center;
+}
+
+.table tbody {
+  text-align: center;
+}
+
 .modal-content {
   /* position: relative; */
   display: flex;
@@ -223,7 +231,7 @@ a {
   cursor: pointer;
 }
 
-.btn-danger {
+.btn-icons {
   padding: 5px 3px 3px 5px;
   background: transparent;
   color: black;
@@ -232,7 +240,7 @@ a {
   text-decoration: none;
 }
 
-.btn-danger:hover {
+.btn-icons:hover {
   background-color: #999 !important;
 }
 

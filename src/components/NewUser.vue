@@ -86,51 +86,11 @@ import { RouterView, RouterLink } from "vue-router";
 </template>
 
 <style scoped>
-.container-fluid form {
-  margin: 2px 2px 2px 2px;
-}
-
-.form {
-  margin-top: auto;
-}
-
-.container-fluid form .form-label {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.container-fluid form .form-control {
-  background-color: #fdeaab;
-  border: none !important;
-  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3);
-  margin: 2px;
-  padding: 8px;
-  border-radius: 8px;
-  width: 100%;
-  outline: none !important;
-}
-
-.container-fluid form .form-label {
-  margin: 0;
-}
-
-
-.fundo-canhoto h4 {
-  margin: 15px;
-}
-
 .canhoto {
   margin: 20px;
-}
-
-.canhoto .col-2,
-.col-3 {
-  margin-bottom: 20px;
-  margin-top: 10px;
 }
 
 .form-label {
   padding-top: 0.5rem;
 }
-
 </style>

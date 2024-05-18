@@ -91,7 +91,7 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalView"
                     >
@@ -197,7 +197,7 @@ import { RouterView, RouterLink } from "vue-router";
 
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalEdit"
                     >
@@ -290,7 +290,7 @@ import { RouterView, RouterLink } from "vue-router";
                               >
                                 Cancelar
                               </button>
-                              <button type="button" class="btn btn-success">
+                              <button type="button" class="btn btn-success" data-bs-dismiss="modal">
                                 Salvar
                               </button>
                             </div>
@@ -302,7 +302,7 @@ import { RouterView, RouterLink } from "vue-router";
                     <!-- Button trigger modal -->
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalDelete"
                     >
@@ -334,69 +334,18 @@ import { RouterView, RouterLink } from "vue-router";
                               ></button>
                             </div>
                             <div class="modal-body">
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <label for="inputNome" class="form-label"
-                                    >Nome</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputNome"
-                                    placeholder="Ex: Julio César"
-                                  />
-                                </div>
-                                <div class="col-md-6">
-                                  <label for="inputCategoria" class="form-label"
-                                    >Categoria</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputCategoria"
-                                    placeholder="Ex: Gasolina"
-                                  />
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <label
-                                    for="inputValorGasto"
-                                    class="form-label"
-                                    >Valor Gasto</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputValorGasto"
-                                    placeholder="Ex: 9999,99"
-                                  />
-                                </div>
-                                <div class="col-md-6">
-                                  <label
-                                    for="inputNotaFiscal"
-                                    class="form-label"
-                                    >Nota Fiscal</label
-                                  >
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputNotaFiscal"
-                                    placeholder="Ex: 123456789"
-                                  />
-                                </div>
-                              </div>
+                              <label for="">Deseja <b>EXCLUIR</b> esse canhoto?</label>
                             </div>
                             <div class="modal-footer">
                               <button
                                 type="button"
-                                class="btn btn-secondary"
+                                class="btn btn-primary"
                                 data-bs-dismiss="modal"
                               >
-                                Cancelar
+                                Voltar
                               </button>
-                              <button type="button" class="btn btn-success">
-                                Salvar
+                              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                                Excluir
                               </button>
                             </div>
                           </div>
@@ -415,7 +364,7 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalView"
                     >
@@ -424,7 +373,7 @@ import { RouterView, RouterLink } from "vue-router";
 
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalEdit"
                     >
@@ -434,7 +383,7 @@ import { RouterView, RouterLink } from "vue-router";
                     <!-- Button trigger modal -->
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalDelete"
                     >
@@ -452,7 +401,7 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalView"
                     >
@@ -461,7 +410,7 @@ import { RouterView, RouterLink } from "vue-router";
 
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalEdit"
                     >
@@ -471,7 +420,7 @@ import { RouterView, RouterLink } from "vue-router";
                     <!-- Button trigger modal -->
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalDelete"
                     >
@@ -489,7 +438,7 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalView"
                     >
@@ -498,7 +447,7 @@ import { RouterView, RouterLink } from "vue-router";
 
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalEdit"
                     >
@@ -508,7 +457,7 @@ import { RouterView, RouterLink } from "vue-router";
                     <!-- Button trigger modal -->
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalDelete"
                     >
@@ -526,7 +475,7 @@ import { RouterView, RouterLink } from "vue-router";
                   <td>
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalView"
                     >
@@ -535,7 +484,7 @@ import { RouterView, RouterLink } from "vue-router";
 
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalEdit"
                     >
@@ -545,7 +494,7 @@ import { RouterView, RouterLink } from "vue-router";
                     <!-- Button trigger modal -->
                     <button
                       type="button"
-                      class="btn btn-danger border-0 shadow-none"
+                      class="btn btn-icons border-0 shadow-none"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalDelete"
                     >
@@ -597,17 +546,5 @@ import { RouterView, RouterLink } from "vue-router";
 
 #addCanhoto a:hover {
   color: red;
-}
-
-.table thead {
-  text-align: center;
-}
-
-.table tbody {
-  text-align: center;
-}
-
-.table {
-  padding: 0px;
 }
 </style>

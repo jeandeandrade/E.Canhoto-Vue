@@ -94,11 +94,11 @@ import { RouterView, RouterLink } from "vue-router";
 </template>
 
 <style scoped>
-.form-label {
-  padding-top: 0.5rem;
-}
-
 .canhoto {
   margin: 20px;
+}
+
+.form-label {
+  padding-top: 0.5rem;
 }
 </style>
