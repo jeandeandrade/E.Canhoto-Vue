@@ -30,7 +30,7 @@ body {
   max-width: 1500px;
 }
 
-.tab-content>* {
+.tab-content>.container-fluid {
   width: fit-content;
 }
 
@@ -55,7 +55,6 @@ main {
   background-color: #FDEAAB !important;
   border: none !important;
   box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3) !important;
-  padding: 8px !important;
   border-radius: 8px !important;
   width: 100% !important;
   outline: none !important;
@@ -109,11 +108,26 @@ main {
   border-radius: 25px;
   background-color: brown;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
-table td a {
+.table td a {
   color: black;
+}
+
+.table thead {
+  text-align: center;
+}
+
+.table tbody {
+  text-align: center;
+}
+
+:root {
+  --bs-modal-bg: #fff;
+  --bs-modal-border-color: rgba(0, 0, 0, 0.175);
+  --bs-modal-border-width: 1px;
+  --bs-modal-border-radius: 0.5rem;
 }
 
 .navbar a {
@@ -252,4 +266,70 @@ form .form-control,
   float: left;
   margin-top: 10px;
   font-size: 15px;
+}
+
+.modal-body input {
+  background-color: #fdeaab !important;
+  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3) !important;
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none !important;
+  outline: none !important;
+}
+
+.modal-footer .btn {
+  font-size: 12px;
+  padding: 10px 45px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btn-icons {
+  padding: 5px 3px 3px 5px;
+  background: transparent;
+  color: black;
+  margin: 0px;
+  margin-left: 3px;
+  text-decoration: none;
+}
+
+.btn-icons:hover {
+  background-color: #999 !important;
+}
+
+.modal-body label {
+  font-size: 16px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@keyframes custom-fade-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes custom-fade-leave {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.custom-fade-enter-active {
+  animation: custom-fade-enter 0.1s ease-in-out;
+}
+
+.custom-fade-leave-active {
+  animation: custom-fade-leave 0.5s ease-in-out;
 }

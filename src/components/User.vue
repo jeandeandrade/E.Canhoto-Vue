@@ -1,6 +1,5 @@
 <script setup>
 import { RouterView, RouterLink } from "vue-router";
-import NewUser from "./NewUser.vue";
 </script>
 
 <template>
@@ -14,9 +13,7 @@ import NewUser from "./NewUser.vue";
           <div class="row canhoto">
             <label>300 <b>Funcionários Encontrados:</b></label>
             <p id="addUser">
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newUserModal">
-                Adicionar Funcionário
-              </button>
+              <router-link to="./newuser">Adicionar Funcionários</router-link>
             </p>
             <table class="table">
               <thead>
@@ -38,17 +35,17 @@ import NewUser from "./NewUser.vue";
                   <td>Entregador(a)</td>
                   <td>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserView">
+                      data-bs-target="#exampleModalView">
                       <i class="bi bi-eye"></i>
                     </button>
 
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserEdit">
+                      data-bs-target="#exampleModalEdit">
                       <i class="bi bi-pencil"></i>
                     </button>
 
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserDelete">
+                      data-bs-target="#exampleModalDelete">
                       <i class="bi bi-trash"></i>
                     </button>
 
@@ -62,15 +59,15 @@ import NewUser from "./NewUser.vue";
                   <td>Entregador(a)</td>
                   <td>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserView">
+                      data-bs-target="#exampleModalView">
                       <i class="bi bi-eye"></i>
                     </button>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserEdit">
+                      data-bs-target="#exampleModalEdit">
                       <i class="bi bi-pencil"></i>
                     </button>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserDelete">
+                      data-bs-target="#exampleModalDelete">
                       <i class="bi bi-trash"></i>
                     </button>
                   </td>
@@ -83,15 +80,15 @@ import NewUser from "./NewUser.vue";
                   <td>Entregador(a)</td>
                   <td>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserView">
+                      data-bs-target="#exampleModalView">
                       <i class="bi bi-eye"></i>
                     </button>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserEdit">
+                      data-bs-target="#exampleModalEdit">
                       <i class="bi bi-pencil"></i>
                     </button>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserDelete">
+                      data-bs-target="#exampleModalDelete">
                       <i class="bi bi-trash"></i>
                     </button>
                   </td>
@@ -104,15 +101,15 @@ import NewUser from "./NewUser.vue";
                   <td>Entregador(a)</td>
                   <td>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserView">
+                      data-bs-target="#exampleModalView">
                       <i class="bi bi-eye"></i>
                     </button>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserEdit">
+                      data-bs-target="#exampleModalEdit">
                       <i class="bi bi-pencil"></i>
                     </button>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserDelete">
+                      data-bs-target="#exampleModalDelete">
                       <i class="bi bi-trash"></i>
                     </button>
                   </td>
@@ -125,15 +122,15 @@ import NewUser from "./NewUser.vue";
                   <td>Entregador(a)</td>
                   <td>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserView">
+                      data-bs-target="#exampleModalView">
                       <i class="bi bi-eye"></i>
                     </button>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserEdit">
+                      data-bs-target="#exampleModalEdit">
                       <i class="bi bi-pencil"></i>
                     </button>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserDelete">
+                      data-bs-target="#exampleModalDelete">
                       <i class="bi bi-trash"></i>
                     </button>
                   </td>
@@ -158,13 +155,12 @@ import NewUser from "./NewUser.vue";
                 </li>
               </ul>
             </div>
-
-            <div class="modal fade" id="modalUserView" tabindex="-1" aria-labelledby="modalUserViewLabel"
+            <div class="modal fade" id="exampleModalView" tabindex="-1" aria-labelledby="exampleModalViewLabel"
               aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modalUserViewLabel">
+                    <h1 class="modal-title fs-5" id="exampleModalViewLabel">
                       Visualizar Funcionário
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -203,7 +199,7 @@ import NewUser from "./NewUser.vue";
               </div>
             </div>
 
-            <div class="modal fade" id="modalUserDelete" tabindex="-1" aria-labelledby="exampleModalLabel"
+            <div class="modal fade" id="exampleModalDelete" tabindex="-1" aria-labelledby="exampleModalLabel"
               aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -227,12 +223,12 @@ import NewUser from "./NewUser.vue";
                 </div>
               </div>
             </div>
-            <div class="modal fade" id="modalUserEdit" tabindex="-1" aria-labelledby="modalUserEditLabel"
+            <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalEditLabel"
               aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modalUserEditLabel">
+                    <h1 class="modal-title fs-5" id="exampleModalEditLabel">
                       Editar Funcionário
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -266,25 +262,6 @@ import NewUser from "./NewUser.vue";
                     <button type="button" class="btn btn-success" data-bs-dismiss="modal">
                       Salvar
                     </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="modal fade" id="newUserModal" tabindex="-1" aria-labelledby="newUserModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="newUserModalLabel">Cadastro de Funcionário</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <NewUser />
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" @click="submitNewCanhoto(this)">Salvar
-                      Funcionário</button>
                   </div>
                 </div>
               </div>

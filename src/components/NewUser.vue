@@ -69,17 +69,7 @@ body {
   margin: 20px;
 }
 
-.canhoto .col-2,
-.col-3 {
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-
 .form-label {
   padding-top: 0.5rem;
-}
-
-.canhoto {
-  margin: 20px;
 }
 </style>
