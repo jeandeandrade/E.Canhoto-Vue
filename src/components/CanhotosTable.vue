@@ -1,5 +1,4 @@
 <script setup>
-import { RouterView, RouterLink } from "vue-router";
 import NewCanhoto from "./NewCanhoto.vue";
 </script>
 
@@ -56,18 +55,18 @@ import NewCanhoto from "./NewCanhoto.vue";
                   <th scope="col">Número NF</th>
                   <th scope="col">Entregador</th>
                   <th scope="col">Preço</th>
-                  <th scope="col">Categorias</th>
+                  <th scope="col">Categoria</th>
                   <th scope="col">Data</th>
                   <th scope="col">Ação</th>
                 </tr>
               </thead>
               <tbody class="table-group-divider">
-                <tr>
-                  <th scope="row">1</th>
-                  <td>0000000000</td>
-                  <td>Test</td>
-                  <td>9.999,00</td>
-                  <td>Test</td>
+                <tr v-for="canhoto in canhotos" :key="canhoto.id">
+                  <td>{{ canhoto.id }}</td>
+                  <td>{{ canhoto.notaFiscal }}</td>
+                  <td>{{ canhoto.nome }}</td>
+                  <td>{{ canhoto.valorGasto }}</td>
+                  <td>{{ canhoto.categoria }}</td>
                   <td>01/01/0001</td>
                   <td>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
@@ -85,102 +84,6 @@ import NewCanhoto from "./NewCanhoto.vue";
                       <i class="bi bi-trash"></i>
                     </button>
 
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>0000000000</td>
-                  <td>Test</td>
-                  <td>9.999,00</td>
-                  <td>Test</td>
-                  <td>01/01/0001</td>
-                  <td>
-                    <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoView">
-                      <i class="bi bi-eye"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoEdit">
-                      <i class="bi bi-pencil"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoDelete">
-                      <i class="bi bi-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>0000000000</td>
-                  <td>Test</td>
-                  <td>9.999,00</td>
-                  <td>Test</td>
-                  <td>01/01/0001</td>
-                  <td>
-                    <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoView">
-                      <i class="bi bi-eye"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoEdit">
-                      <i class="bi bi-pencil"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoDelete">
-                      <i class="bi bi-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>0000000000</td>
-                  <td>Test</td>
-                  <td>9.999,00</td>
-                  <td>Test</td>
-                  <td>01/01/0001</td>
-                  <td>
-                    <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoView">
-                      <i class="bi bi-eye"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoEdit">
-                      <i class="bi bi-pencil"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoDelete">
-                      <i class="bi bi-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>0000000000</td>
-                  <td>Test</td>
-                  <td>9.999,00</td>
-                  <td>Test</td>
-                  <td>01/01/0001</td>
-                  <td>
-                    <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoView">
-                      <i class="bi bi-eye"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoEdit">
-                      <i class="bi bi-pencil"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoDelete">
-                      <i class="bi bi-trash"></i>
-                    </button>
                   </td>
                 </tr>
               </tbody>
@@ -342,6 +245,34 @@ import NewCanhoto from "./NewCanhoto.vue";
   </div>
 
 </template>
+
+<script>
+import CanhotoDataService from '../services/CanhotoDataService';
+
+export default {
+  name: "list-canhotos",
+  data() {
+    return {
+      canhotos: []
+    };
+  },
+  methods: {
+    retrieveCanhotos() {
+      CanhotoDataService.getAll()
+        .then(response => {
+          this.canhotos = response.data;
+          console.log(this.canhotos);
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    }
+  },
+  mounted() {
+    this.retrieveCanhotos();
+  },
+}
+</script>
 
 <style scoped>
 .fundo-canhoto #titulo-tabela {

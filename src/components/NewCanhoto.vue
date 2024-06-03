@@ -32,6 +32,44 @@ import { RouterView, RouterLink } from "vue-router";
     </div>
 </template>
 
+<script>
+import CanhotoDataService from "../services/CanhotoDataService";
+
+export default {
+  name: "new-post",
+  data() {
+    return {
+      submitted: false,
+      post: {
+        title: "",
+        body: "",
+      },
+    };
+  },
+  methods: {
+    savePost() {
+      var data = {
+        title: this.post.title,
+        body: this.post.body,
+        userId: 1,
+      };
+      CanhotoDataService.create(data)
+        .then((response) => {
+          console.log(response.data);
+          this.submitted = true;
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+    newPost() {
+      this.submitted = false;
+      this.post = {};
+    },
+  },
+};
+</script>
+
 <style scoped>
 .form {
     margin-top: auto;
