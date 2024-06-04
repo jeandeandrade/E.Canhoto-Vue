@@ -1,5 +1,6 @@
 <script setup>
 import NewCanhoto from "./NewCanhoto.vue";
+import DetailsCanhoto from "./DetailsCanhoto.vue";
 </script>
 
 <template>
@@ -66,7 +67,11 @@ import NewCanhoto from "./NewCanhoto.vue";
                   <td>{{ canhoto.notaFiscal }}</td>
                   <td>{{ canhoto.nome }}</td>
                   <td>{{ canhoto.valorGasto }}</td>
-                  <td>{{ canhoto.categoria }}</td>
+                  <td v-if="canhoto.categoria == 1">Alimentação</td>
+                  <td v-if="canhoto.categoria == 2">Hospedagem</td>
+                  <td v-if="canhoto.categoria == 3">Gasolina</td>
+                  <td v-if="canhoto.categoria == 4">Remédios</td>
+                  <td v-if="canhoto.categoria == 5">Reparos</td>
                   <td>01/01/0001</td>
                   <td>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
@@ -80,7 +85,7 @@ import NewCanhoto from "./NewCanhoto.vue";
                     </button>
 
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoDelete">
+                      data-bs-target="#modalCanhotoDelete" @click="">
                       <i class="bi bi-trash"></i>
                     </button>
 
@@ -88,7 +93,7 @@ import NewCanhoto from "./NewCanhoto.vue";
                 </tr>
               </tbody>
             </table>
-            <div class="clearfix">
+            <!-- <div class="clearfix">
               <div class="hint-text">5 Itens Por Página</div>
               <ul class="pagination">
                 <li class="page-item disabled">
@@ -105,7 +110,7 @@ import NewCanhoto from "./NewCanhoto.vue";
                   <a href="" class="page-link">Próximo</a>
                 </li>
               </ul>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -126,7 +131,7 @@ import NewCanhoto from "./NewCanhoto.vue";
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary" @click="submitNewCanhoto(this)">Salvar Canhoto</button>
+            <button type="button" class="btn btn-primary" @click="salvarCanhoto()">Salvar Canhoto</button>
           </div>
         </div>
       </div>
@@ -193,7 +198,7 @@ import NewCanhoto from "./NewCanhoto.vue";
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
               Cancelar
             </button>
-            <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+            <button type="button" class="btn btn-success" @click="salvarCanhoto()" data-bs-dismiss="modal">
               Salvar
             </button>
           </div>
@@ -212,26 +217,7 @@ import NewCanhoto from "./NewCanhoto.vue";
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="row">
-              <div class="col-md-6">
-                <label for="inputNome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="inputNome" placeholder="Ex: Julio César" disabled />
-              </div>
-              <div class="col-md-6">
-                <label for="inputCategoria" class="form-label">Categoria</label>
-                <input type="text" class="form-control" id="inputCategoria" placeholder="Ex: Gasolina" disabled />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label for="inputValorGasto" class="form-label">Valor Gasto</label>
-                <input type="text" class="form-control" id="inputValorGasto" placeholder="Ex: 9999,99" disabled />
-              </div>
-              <div class="col-md-6">
-                <label for="inputNotaFiscal" class="form-label">Nota Fiscal</label>
-                <input type="text" class="form-control" id="inputNotaFiscal" placeholder="Ex: 123456789" disabled />
-              </div>
-            </div>
+            <DetailsCanhoto :id="this.selectedCanhoto" />
           </div>
 
           <div class="modal-footer">
@@ -253,7 +239,8 @@ export default {
   name: "list-canhotos",
   data() {
     return {
-      canhotos: []
+      canhotos: [],
+      selectedCanhoto: '',
     };
   },
   methods: {
@@ -266,11 +253,20 @@ export default {
         .catch(e => {
           console.log(e);
         });
+    },
+    async salvarCanhoto() {
+      let canhotoForm = document.querySelector("#newCanhotoForm");
+      await canhotoForm.dispatchEvent(new Event("submit"));
+      this.retrieveCanhotos();
+    },
+    sendInfo(id){
+      this.selectedCanhoto = id;
     }
+
   },
   mounted() {
     this.retrieveCanhotos();
-  },
+  }
 }
 </script>
 
