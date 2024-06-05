@@ -7,6 +7,10 @@ class CanhotoDataService {
     return http.get(this.EndPoint);
   }
 
+  getById(id) {
+    return http.get(this.EndPoint + `/${id}`)
+  }
+
   create(data) {
     return http.post(this.EndPoint, data);
   }

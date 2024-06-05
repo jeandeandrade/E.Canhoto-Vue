@@ -1,6 +1,4 @@
 <script setup>
-import NewCanhoto from "./NewCanhoto.vue";
-import DetailsCanhoto from "./DetailsCanhoto.vue";
 </script>
 
 <template>
@@ -75,17 +73,17 @@ import DetailsCanhoto from "./DetailsCanhoto.vue";
                   <td>01/01/0001</td>
                   <td>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoView">
+                      data-bs-target="#modalCanhotoView" @click="sendInfo(canhoto.id)">
                       <i class="bi bi-eye"></i>
                     </button>
 
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoEdit">
+                      data-bs-target="#modalCanhotoEdit" @click="sendInfo(canhoto.id)">
                       <i class="bi bi-pencil"></i>
                     </button>
 
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoDelete" @click="">
+                      data-bs-target="#modalCanhotoDelete" @click="sendInfo(canhoto.id)">
                       <i class="bi bi-trash"></i>
                     </button>
 
@@ -217,7 +215,7 @@ import DetailsCanhoto from "./DetailsCanhoto.vue";
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <DetailsCanhoto :id="this.selectedCanhoto" />
+            <DetailsCanhoto :id="selectedCanhoto" />
           </div>
 
           <div class="modal-footer">
@@ -234,6 +232,8 @@ import DetailsCanhoto from "./DetailsCanhoto.vue";
 
 <script>
 import CanhotoDataService from '../services/CanhotoDataService';
+import NewCanhoto from "./NewCanhoto.vue";
+import DetailsCanhoto from "./DetailsCanhoto.vue";
 
 export default {
   name: "list-canhotos",
@@ -261,8 +261,14 @@ export default {
     },
     sendInfo(id){
       this.selectedCanhoto = id;
+      console.log(this.selectedCanhoto);
+      document.querySelector("#detail-canhoto").dispatchEvent(new Event("update"))
     }
 
+  },
+  components: {
+    NewCanhoto,
+    DetailsCanhoto
   },
   mounted() {
     this.retrieveCanhotos();
