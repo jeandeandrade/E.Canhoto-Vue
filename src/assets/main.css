@@ -63,6 +63,9 @@ main {
 .btn {
   color: black;
 }
+.modals{
+  display: none;
+}
 
 .btn-primary {
   --bs-btn-color: black;

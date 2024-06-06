@@ -73,17 +73,16 @@
                   <td>01/01/0001</td>
                   <td>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoView" @click="sendInfo(canhoto.id)">
+                      data-bs-target="#modalCanhotoView" @click="viewModalDetails(canhoto)">
                       <i class="bi bi-eye"></i>
                     </button>
 
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoEdit" @click="sendInfo(canhoto.id)">
+                      data-bs-target="#modalCanhotoEdit">
                       <i class="bi bi-pencil"></i>
                     </button>
 
-                    <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoDelete" @click="sendInfo(canhoto.id)">
+                    <button type="button" class="btn btn-icons border-0 shadow-none" @click="idexcluir(canhoto.id)">
                       <i class="bi bi-trash"></i>
                     </button>
 
@@ -114,9 +113,7 @@
       </div>
     </div>
 
-
-
-    <div class="modal fade" id="newCanhotoModal" tabindex="-1" aria-labelledby="newCanhotoModalLabel"
+      <div class="modal fade" id="newCanhotoModal" tabindex="-1" aria-labelledby="newCanhotoModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -215,7 +212,43 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <DetailsCanhoto :id="selectedCanhoto" />
+            <div class="row">
+            <div class="col sm-3">
+              <label for="disabledTextInput" class="form-label">ID</label>
+              <input type="text" disabled class="form-control" v-model="modalData.id">
+            </div>
+            <div class="col sm-3">
+              <label for="disabledTextInput" class="form-label">Número NF:</label>
+              <input type="text" disabled class="form-control" v-model="modalData.notaFiscal">
+            </div>
+            <div class="col sm-3">
+              <label for="disabledTextInput" class="form-label">Entregador:</label>
+              <input type="text" disabled class="form-control" v-model="modalData.nome">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col sm-3">
+              <label for="disabledTextInput" class="form-label">Preço:</label>
+              <input type="text" disabled class="form-control" v-model="modalData.valorGasto">
+            </div>
+            <div class="col sm-3">
+              <label for="disabledTextInput" class="form-label">Categorias:</label>
+              <input v-if="modalData.categoria == 1" type="text" disabled class="form-control"
+                value="Alimentação">
+              <input v-if="modalData.categoria == 2" type="text" disabled class="form-control"
+                value="Hospedagem">
+              <input v-if="modalData.categoria == 3" type="text" disabled class="form-control"
+                value="Gasolina">
+              <input v-if="modalData.categoria == 4" type="text" disabled class="form-control"
+                value="Remédios">
+              <input v-if="modalData.categoria == 5" type="text" disabled class="form-control"
+                value="Reparos">
+            </div>
+            <div class="col sm-3">
+              <label for="disabledTextInput" class="form-label">Data:</label>
+              <input type="text"  disabled class="form-control" v-model="modalData.data">
+            </div>
+          </div>
           </div>
 
           <div class="modal-footer">
@@ -226,7 +259,8 @@
         </div>
       </div>
     </div>
-  </div>
+
+  </div> 
 
 </template>
 
@@ -240,7 +274,14 @@ export default {
   data() {
     return {
       canhotos: [],
-      selectedCanhoto: '',
+      modalData: {
+        id: "",
+        valorGasto: "",
+        notaFiscal: "",
+        nome: "",
+        data: "0000000",
+        categoria: 1
+      }
     };
   },
   methods: {
@@ -257,14 +298,12 @@ export default {
     async salvarCanhoto() {
       let canhotoForm = document.querySelector("#newCanhotoForm");
       await canhotoForm.dispatchEvent(new Event("submit"));
-      this.retrieveCanhotos();
+      retrieveCanhotos();
     },
-    sendInfo(id){
-      this.selectedCanhoto = id;
-      console.log(this.selectedCanhoto);
-      document.querySelector("#detail-canhoto").dispatchEvent(new Event("update"))
-    }
-
+    viewModalDetails(canhoto) {
+      this.modalData = canhoto;
+    },
+    
   },
   components: {
     NewCanhoto,
@@ -292,8 +331,6 @@ export default {
 .canhoto {
   margin: 50px;
 }
-
-
 
 .canhoto .col-2,
 .col-3 {
