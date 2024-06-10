@@ -184,16 +184,16 @@ a {
 
 form .form-control,
 .form-select {
-  background-color: #efc331;
-  border: none !important;
-  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3);
-  padding: 8px;
+  background-color: #fdeaab !important;
+  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.3) !important;
+  margin: 8px 0;
+  padding: 10px 15px;
   border-radius: 8px;
-  width: 100%;
+  border: none !important;
   outline: none !important;
 }
 
-.form-control:focus {
+.form-control:focus, .form-select:focus {
   background-color: #ffd446 !important;
 }
 
