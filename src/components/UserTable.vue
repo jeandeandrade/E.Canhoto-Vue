@@ -8,7 +8,7 @@
         <div class="fundo-canhoto col-10">
           <h4>Gestão de Funcionários</h4>
           <div class="row canhoto">
-            <label>300 <b>Funcionários Encontrados:</b></label>
+            <label><b>Funcionários Encontrados: {{ userCount() }}</b></label>
             <p id="addUser">
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newUserModal">
                 Adicionar Funcionário
@@ -38,7 +38,7 @@
                     </button>
 
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalUserEdit">
+                      data-bs-target="#modalUserEdit" @click="editUserDetails(user)">
                       <i class="bi bi-pencil"></i>
                     </button>
 
@@ -122,7 +122,7 @@
                     <div class="row">
                       <div class="col-md-12">
                         <label for="inputNome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="inputNome" v-model="modalData.nome" />
+                        <input type="text" class="form-control" id="inputNome" v-model="modalData.nome" disabled />
                       </div>
                     </div>
                     <div class="row">
@@ -252,6 +252,9 @@ export default {
         .catch(e => {
           console.log(e);
         });
+    },
+    userCount() {
+      return this.users.length;
     },
     idExcluir(id) {
       this.userToDelete = id;
