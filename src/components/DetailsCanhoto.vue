@@ -5,7 +5,7 @@
           <div class="row">
             <div class="col sm-3">
               <label for="disabledTextInput" class="form-label">ID</label>
-              <input type="text" disabled class="form-control" v-model="canhoto.id">
+              <input type="text" disabled class="form-control" v-model="canhoto.idCanhoto">
             </div>
             <div class="col sm-3">
               <label for="disabledTextInput" class="form-label">Número NF:</label>
@@ -13,7 +13,7 @@
             </div>
             <div class="col sm-3">
               <label for="disabledTextInput" class="form-label">Entregador:</label>
-              <input type="text" disabled class="form-control" v-model="canhoto.nome">
+              <input type="text" disabled class="form-control" v-model="canhoto.userName">
             </div>
           </div>
           <div class="row">
@@ -37,6 +37,10 @@
             <div class="col sm-3">
               <label for="disabledTextInput" class="form-label">Data:</label>
               <input type="text"  disabled class="form-control" v-model="canhoto.data">
+            </div>
+            <div class="col sm-3">
+              <label for="disabledTextInput" class="form-label">Status:</label>
+              <input type="text" disabled class="form-control" v-model="canhoto.status">
             </div>
           </div>
         </fieldset>

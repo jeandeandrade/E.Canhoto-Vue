@@ -8,7 +8,7 @@
         <div class="fundo-canhoto col-10">
           <h4>Gestão de Canhotos</h4>
           <div class="row canhoto">
-            <label>1.300 <b>Canhotos Encontrados:</b></label>
+            <label><b>Canhotos Encontrados:</b>{{ canhotoCount() }}</label>
             <div class="col-3">
               <select class="form-select" aria-label="Default select example">
                 <option selected disabled>Categoria</option>
@@ -26,16 +26,7 @@
                 <option value="4">7 mil até 10 mil</option>
               </select>
             </div>
-            <div class="col-3">
-              <select class="form-select" aria-label="Default select example">
-                <option selected disabled>Transportadora</option>
-                <option value="1">Alfa Transportes</option>
-                <option value="2">Braspress</option>
-                <option value="3">Patrus</option>
-                <option value="4">Rodonaves</option>
-                <option value="5">TNT Mercúrio</option>
-              </select>
-            </div>
+           
             <form class="d-flex col-3" role="search">
               <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search" />
               <button class="btn btn-success" type="submit">
@@ -56,21 +47,25 @@
                   <th scope="col">Preço</th>
                   <th scope="col">Categoria</th>
                   <th scope="col">Data</th>
+                  <th scope="col">Status</th>
                   <th scope="col">Ação</th>
                 </tr>
               </thead>
               <tbody class="table-group-divider">
-                <tr v-for="canhoto in canhotos" :key="canhoto.id">
-                  <td>{{ canhoto.id }}</td>
+                <tr v-for="canhoto in canhotos" :key="canhoto.idCanhoto">
+                  <td>{{ canhoto.idCanhoto }}</td>
                   <td>{{ canhoto.notaFiscal }}</td>
-                  <td>{{ canhoto.nome }}</td>
+                  <td>{{ canhoto.userName }}</td>
                   <td>{{ canhoto.valorGasto }}</td>
                   <td v-if="canhoto.categoria == 1">Alimentação</td>
                   <td v-if="canhoto.categoria == 2">Hospedagem</td>
-                  <td v-if="canhoto.categoria == 3">Gasolina</td>
+                  <td v-if="canhoto.categoria == 3">Combustivel</td>
                   <td v-if="canhoto.categoria == 4">Remédios</td>
                   <td v-if="canhoto.categoria == 5">Reparos</td>
-                  <td>01/01/0001</td>
+                  <td>{{ canhoto.data }}</td>
+                  <td v-if="canhoto.status == 0" style="color: red;">Reprovado</td>
+                  <td v-if="canhoto.status == 1" style="color: green;">Aprovado</td>
+                  <td v-if="canhoto.status == 2" style="color: orange;">Pendente</td>
                   <td>
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
                       data-bs-target="#modalCanhotoView" @click="viewModalDetails(canhoto)">
@@ -78,11 +73,11 @@
                     </button>
 
                     <button type="button" class="btn btn-icons border-0 shadow-none" data-bs-toggle="modal"
-                      data-bs-target="#modalCanhotoEdit">
-                      <i class="bi bi-pencil"></i>
+                      data-bs-target="#modalCanhotoEdit" @click="viewModalDetails(canhoto)">
+                      <i class="bi bi-pencil" @click="edit"></i>
                     </button>
 
-                    <button type="button" class="btn btn-icons border-0 shadow-none" @click="idexcluir(canhoto.id)">
+                    <button type="button" class="btn btn-icons border-0 shadow-none" @click="idExcluir(canhoto.idCanhoto)">
                       <i class="bi bi-trash"></i>
                     </button>
 
@@ -149,8 +144,10 @@
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
               Voltar
             </button>
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-              Excluir
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+              @click="confirmDelete()"
+              > 
+                Excluir
             </button>
           </div>
         </div>
@@ -171,29 +168,49 @@
             <div class="row">
               <div class="col-md-6">
                 <label for="inputNome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="inputNome" placeholder="Ex: Julio César" />
+                <input type="text" class="form-control" id="inputNome" v-model="modalData.userName" disabled/>
               </div>
               <div class="col-md-6">
                 <label for="inputCategoria" class="form-label">Categoria</label>
-                <input type="text" class="form-control" id="inputCategoria" placeholder="Ex: Gasolina" />
+                <input v-if="modalData.categoria == 1" type="text" disabled class="form-control"
+                value="Alimentação">
+              <input v-if="modalData.categoria == 2" type="text" disabled class="form-control"
+                value="Hospedagem">
+              <input v-if="modalData.categoria == 3" type="text" disabled class="form-control"
+                value="Combustivel">
+              <input v-if="modalData.categoria == 4" type="text" disabled class="form-control"
+                value="Remédios">
+              <input v-if="modalData.categoria == 5" type="text" disabled class="form-control"
+                value="Reparos">
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
-                <label for="inputValorGasto" class="form-label">Valor Gasto</label>
-                <input type="text" class="form-control" id="inputValorGasto" placeholder="Ex: 9999,99" />
+                <label for="inputNome" class="form-label">Valor Gasto (R$)</label>
+                <input type="text" class="form-control" id="inputNome" v-model="modalData.valorGasto" disabled/>
               </div>
               <div class="col-md-6">
-                <label for="inputNotaFiscal" class="form-label">Nota Fiscal</label>
-                <input type="text" class="form-control" id="inputNotaFiscal" placeholder="Ex: 123456789" />
+                <label for="inputNome" class="form-label">Nota Fiscal</label>
+                <input type="text" class="form-control" id="inputNome" v-model="modalData.notaFiscal" disabled/>
               </div>
             </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="" class="form-label">Status</label>
+                <select name="selectStatus" class="form-select" v-model="modalData.status" aria-label="Default select example">
+                  <option value="0">Reprovado</option>
+                  <option value="1">Aprovado</option>
+                  <option value="2">Pendente</option>
+                </select>
+              </div>
+            </div>
+            
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
               Cancelar
             </button>
-            <button type="button" class="btn btn-success" @click="salvarCanhoto()" data-bs-dismiss="modal">
+            <button type="button" class="btn btn-success" @click="atualizarCanhoto()" data-bs-dismiss="modal">
               Salvar
             </button>
           </div>
@@ -213,42 +230,51 @@
           </div>
           <div class="modal-body">
             <div class="row">
-            <div class="col sm-3">
-              <label for="disabledTextInput" class="form-label">ID</label>
-              <input type="text" disabled class="form-control" v-model="modalData.id">
+              <div class="col sm-3">
+                <label for="disabledTextInput" class="form-label">ID</label>
+                <input type="text" disabled class="form-control" v-model="modalData.idCanhoto">
+              </div>
+              <div class="col sm-3">
+                <label for="disabledTextInput" class="form-label">Categoria:</label>
+                <input v-if="modalData.categoria == 1" type="text" disabled class="form-control"
+                  value="Alimentação">
+                <input v-if="modalData.categoria == 2" type="text" disabled class="form-control"
+                  value="Hospedagem">
+                <input v-if="modalData.categoria == 3" type="text" disabled class="form-control"
+                  value="Combustivel">
+                <input v-if="modalData.categoria == 4" type="text" disabled class="form-control"
+                  value="Remédios">
+                <input v-if="modalData.categoria == 5" type="text" disabled class="form-control"
+                  value="Reparos">
+              </div>
+              <div class="col sm-3">
+                <label for="disabledTextInput" class="form-label">Entregador:</label>
+                <input type="text" disabled class="form-control" v-model="modalData.userName">
+              </div>
             </div>
-            <div class="col sm-3">
-              <label for="disabledTextInput" class="form-label">Número NF:</label>
-              <input type="text" disabled class="form-control" v-model="modalData.notaFiscal">
+            <div class="row">
+              <div class="col sm-3">
+                <label for="disabledTextInput" class="form-label">Preço:</label>
+                <input type="text" disabled class="form-control" v-model="modalData.valorGasto">
+              </div>
+              <div class="col sm-3">
+                <label for="disabledTextInput" class="form-label">Número NF:</label>
+                <input type="text" disabled class="form-control" v-model="modalData.notaFiscal">
+              </div>
+              <div class="col sm-3">
+                <label for="disabledTextInput" class="form-label">Data:</label>
+                <input type="text"  disabled class="form-control" v-model="modalData.data">
+              </div>
+              <div class="col sm-3">
+                <label for="disabledTextInput" class="form-label">Status:</label>
+                <input v-if="modalData.status == 0" type="text" disabled class="form-control"
+                value="Reprovado">
+                <input v-if="modalData.status == 1" type="text" disabled class="form-control"
+                value="Aprovado">
+                <input v-if="modalData.status == 2" type="text" disabled class="form-control"
+                value="Pendente">
+              </div>
             </div>
-            <div class="col sm-3">
-              <label for="disabledTextInput" class="form-label">Entregador:</label>
-              <input type="text" disabled class="form-control" v-model="modalData.nome">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col sm-3">
-              <label for="disabledTextInput" class="form-label">Preço:</label>
-              <input type="text" disabled class="form-control" v-model="modalData.valorGasto">
-            </div>
-            <div class="col sm-3">
-              <label for="disabledTextInput" class="form-label">Categorias:</label>
-              <input v-if="modalData.categoria == 1" type="text" disabled class="form-control"
-                value="Alimentação">
-              <input v-if="modalData.categoria == 2" type="text" disabled class="form-control"
-                value="Hospedagem">
-              <input v-if="modalData.categoria == 3" type="text" disabled class="form-control"
-                value="Gasolina">
-              <input v-if="modalData.categoria == 4" type="text" disabled class="form-control"
-                value="Remédios">
-              <input v-if="modalData.categoria == 5" type="text" disabled class="form-control"
-                value="Reparos">
-            </div>
-            <div class="col sm-3">
-              <label for="disabledTextInput" class="form-label">Data:</label>
-              <input type="text"  disabled class="form-control" v-model="modalData.data">
-            </div>
-          </div>
           </div>
 
           <div class="modal-footer">
@@ -275,13 +301,15 @@ export default {
     return {
       canhotos: [],
       modalData: {
-        id: "",
+        idCanhoto: "",
         valorGasto: "",
         notaFiscal: "",
-        nome: "",
+        userName: "",
         data: "0000000",
-        categoria: 1
-      }
+        categoria: 1,
+        status: 1
+      },
+      canhotoToDelete: null
     };
   },
   methods: {
@@ -295,15 +323,45 @@ export default {
           console.log(e);
         });
     },
+    canhotoCount() {
+    return this.canhotos.length;
+  },
     async salvarCanhoto() {
       let canhotoForm = document.querySelector("#newCanhotoForm");
       await canhotoForm.dispatchEvent(new Event("submit"));
       retrieveCanhotos();
     },
-    viewModalDetails(canhoto) {
+    viewModalDetails(canhoto) { 
       this.modalData = canhoto;
     },
-    
+    atualizarCanhoto() {
+      CanhotoDataService.update(this.modalData.idCanhoto, this.modalData)
+        .then(response => {
+          console.log(response.data);
+          this.retrieveCanhotos();
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+    idExcluir(idCanhoto) {
+      this.canhotoToDelete = idCanhoto;
+
+      var deleteModal = new bootstrap.Modal(document.getElementById("modalCanhotoDelete"));
+      deleteModal.show();
+    },
+    confirmDelete() {
+      if (this.canhotoToDelete !== null) {
+        CanhotoDataService.delete(this.canhotoToDelete)
+          .then(response => {
+            console.log(response.data);
+            this.retrieveCanhotos();
+          })
+          .catch(e => {
+            console.log(e);
+          });
+      }
+    },
   },
   components: {
     NewCanhoto,
