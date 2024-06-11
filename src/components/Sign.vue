@@ -14,6 +14,7 @@
       </div>
       <div class="form-container sign-in">
         <form>
+          <img src="@/assets/logo-removebg-preview.png" style="width: 200px; margin-bottom: 20px;">
           <h1>Login</h1>
           <input type="email" placeholder="E-mail">
           <input type="password" placeholder="Senha">
