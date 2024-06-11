@@ -160,6 +160,7 @@ main {
 .fundo-canhoto {
   background-color: white;
   border-radius: 25px;
+  width: 1450px !important;
 }
 
 .fundo-canhoto h4 {

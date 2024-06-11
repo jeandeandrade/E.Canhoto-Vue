@@ -22,7 +22,7 @@ import { RouterView, RouterLink } from "vue-router";
       </div>
       <div class="col-6">
         <label for="inputGasto" class="form-label">Valor Gasto (R$)</label>
-        <input type="number" step="0.01" class="form-control" id="inputGasto" v-model="canhoto.valorGasto" placeholder="Ex: 500.00" min="0" pattern="\d+(\.\d{1,2})?"
+        <input type="number" step="0.01" class="form-control" id="inputGasto" v-model="canhoto.valorGasto" placeholder="Ex: 500.00" min="0" pattern="\d+(\.\d{1,2})?">
       </div>
       <div class="col-6">
         <label for="inputData" class="form-label">Data</label>
@@ -41,10 +41,7 @@ import { RouterView, RouterLink } from "vue-router";
       </div>
       <div class="col-6">
         <label class="form-label" for="">Status</label>
-        <select name="selectStatus" class="form-select" v-model="canhoto.status" aria-label="Default select example">
-          <option disabled selected value="">Selecione o status do canhoto</option>
-          <option value="0">Reprovado</option>
-          <option value="1">Aprovado</option>
+        <select class="form-select" disabled aria-label="Default select example">
           <option value="2">Pendente</option>
         </select>
       </div>
@@ -90,7 +87,7 @@ export default {
         categoria: "",
         valorGasto: "",
         data: "",
-        status: ""
+        status: 2
       },
       users: []
     };
@@ -114,6 +111,7 @@ export default {
         })
         .then(() => {
           this.showCanhotoAdicionado();
+          document.querySelector("#tabelaCanhotos").dispatchEvent(new Event("atualizarCanhotos"))
         })
         .catch((e) => {
           console.log(e);

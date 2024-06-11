@@ -3,7 +3,7 @@
 
 <template>
   <div class="container-fluid">
-    <div class="info">
+    <div class="info" id="tabelaCanhotos">
       <div class="row">
         <div class="fundo-canhoto col-10">
           <h4>Gestão de Canhotos</h4>
@@ -33,11 +33,21 @@
                 <i class="bi bi-search"></i>
               </button>
             </form>
-            <p id="addCanhoto">
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newCanhotoModal">
-                Adicionar Canhoto
-              </button>
-            </p>
+            
+            <div class="d-flex flex-row grow justify-content-between">
+              <p id="addCanhoto">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newCanhotoModal">
+                  Adicionar Canhoto
+                </button>
+              </p>
+              
+              <p id="refreshTabela">
+                <button type="button" class="btn btn-primary" @click="retrieveCanhotos()">
+                  Atualizar Tabela <i class="bi bi-arrow-clockwise"></i>
+                </button>
+              </p>
+            </div>
+
             <table class="table">
               <thead>
                 <tr>
@@ -317,7 +327,7 @@ export default {
       CanhotoDataService.getAll()
         .then(response => {
           this.canhotos = response.data;
-          console.log(this.canhotos);
+          console.log("Muito rapido")
         })
         .catch(e => {
           console.log(e);
@@ -325,11 +335,11 @@ export default {
     },
     canhotoCount() {
     return this.canhotos.length;
-  },
+    },
     async salvarCanhoto() {
       let canhotoForm = document.querySelector("#newCanhotoForm");
       await canhotoForm.dispatchEvent(new Event("submit"));
-      retrieveCanhotos();
+      this.retrieveCanhotos();
     },
     viewModalDetails(canhoto) { 
       this.modalData = canhoto;
